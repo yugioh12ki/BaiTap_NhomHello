@@ -30,7 +30,7 @@ namespace DTO_BaiTapNhom
         public override int TinhKinhPhi()
         {
             if (is_thucTe) return KinhPhi = 15000000;
-            else return KinhPhi = 8000000;
+            else return KinhPhi = 7000000;
             throw new NotImplementedException();
         }
 
