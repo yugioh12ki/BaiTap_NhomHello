@@ -43,5 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL_BaiTapNhom\DAL_BaiTapNhom.csproj">
+      <Project>{d1adc828-9f7c-4a97-aa42-2a58c6a2457e}</Project>
+      <Name>DAL_BaiTapNhom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_BaiTapNhom\DTO_BaiTapNhom.csproj">
+      <Project>{a372a617-ac04-4fe1-b652-fd2f93fec74c}</Project>
+      <Name>DTO_BaiTapNhom</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
