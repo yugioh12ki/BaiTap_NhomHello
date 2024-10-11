@@ -24,7 +24,7 @@ namespace DTO_BaiTapNhom
             this.soCauHoi = soCauHoi;
         }
 
-        public override int TinhKinhPhi()
+        public override double TinhKinhPhi()
         {
             if (soCauHoi > 100) KinhPhi = 12000000;
             else KinhPhi = 7000000;

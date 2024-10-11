@@ -28,7 +28,7 @@ namespace DTO_BaiTapNhom
             this.moiTruong = mt;
         }
 
-        public override int TinhKinhPhi()
+        public override double TinhKinhPhi()
         {
             if (MoiTruong == "web" && MoiTruong == "mobile")
                 KinhPhi = 15000000;

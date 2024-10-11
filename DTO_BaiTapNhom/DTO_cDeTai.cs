@@ -12,7 +12,7 @@ namespace DTO_BaiTapNhom
         //DeTai
         private string maDeTai;
         private string tenDeTai;
-        private int kinhPhi;
+        private double kinhPhi;
         private string truongNhom;
         private string ngayBatDau;
         private string ngayKetThuc;
@@ -22,7 +22,7 @@ namespace DTO_BaiTapNhom
 
         public string MaDeTai { get => maDeTai; set => maDeTai = value; }
         public string TenDeTai { get => tenDeTai; set => tenDeTai = value; }
-        public int KinhPhi { get => kinhPhi; set => kinhPhi = value; }
+        public double KinhPhi { get => kinhPhi; set => kinhPhi = value; }
         public string TruongNhom { get => truongNhom; set => truongNhom = value; }
         public string NgayBatDau { get => ngayBatDau; set => ngayBatDau = value; }
         public string NgayKetThuc { get => ngayKetThuc; set => ngayKetThuc = value; }
@@ -51,7 +51,7 @@ namespace DTO_BaiTapNhom
             this.NgayBatDau = "1/1/1980";
         }
 
-        public abstract int TinhKinhPhi();
+        public abstract double TinhKinhPhi();
 
         #endregion method
     }
