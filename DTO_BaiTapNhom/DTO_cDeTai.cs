@@ -34,6 +34,12 @@ namespace DTO_BaiTapNhom
 
         #region method
 
+        public DTO_cDeTai()
+        {
+            this.kinhPhi = 0;
+            this.NgayBatDau = "1/1/1980";
+        }
+
         public DTO_cDeTai(string maDeTai, string tenDeTai, int kinhPhi, string truongNhom, string ngayBatDau, string ngayKetThuc, string hoTenGV)
         {
             this.maDeTai = maDeTai;
@@ -43,12 +49,6 @@ namespace DTO_BaiTapNhom
             this.ngayBatDau = ngayBatDau;
             this.ngayKetThuc = ngayKetThuc;
             this.hoTenGV = hoTenGV;
-        }
-
-        public DTO_cDeTai() 
-        {
-            this.kinhPhi = 0;
-            this.NgayBatDau = "1/1/1980";
         }
 
         public abstract double TinhKinhPhi();

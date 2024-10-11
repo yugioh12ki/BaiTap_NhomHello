@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="DTO_cDeTai.cs" />
     <Compile Include="DTO_CongNghe.cs" />
-    <Compile Include="DTO_lstDeTai.cs" />
+    <Compile Include="DTO_lstCongNghe.cs" />
+    <Compile Include="DTO_lstKinhTe.cs" />
+    <Compile Include="DTO_lstNCLT.cs" />
     <Compile Include="DTO_KinhTe.cs" />
     <Compile Include="DTO_NCLT.cs" />
     <Compile Include="IHoTroKinhPhi.cs" />

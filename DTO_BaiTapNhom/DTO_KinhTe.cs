@@ -24,6 +24,11 @@ namespace DTO_BaiTapNhom
             this.soCauHoi = soCauHoi;
         }
 
+        public DTO_KinhTe()
+        {
+            soCauHoi = 0;
+        }
+
         public override double TinhKinhPhi()
         {
             if (soCauHoi > 100) KinhPhi = 12000000;
@@ -38,6 +43,16 @@ namespace DTO_BaiTapNhom
                 return soCauHoi * 550;
             else
                 return soCauHoi * 450;
+            throw new NotImplementedException();
+        }
+
+        internal void xuat()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void nhap()
+        {
             throw new NotImplementedException();
         }
 

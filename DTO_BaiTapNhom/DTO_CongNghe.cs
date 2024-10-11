@@ -28,6 +28,10 @@ namespace DTO_BaiTapNhom
             this.moiTruong = mt;
         }
 
+        public DTO_CongNghe()
+        {
+        }
+
         public override double TinhKinhPhi()
         {
             if (MoiTruong == "web" && MoiTruong == "mobile")
@@ -45,6 +49,16 @@ namespace DTO_BaiTapNhom
             else if (MoiTruong == "web")
                 return 800000;
             else if(MoiTruong == "window") return 500000;
+            throw new NotImplementedException();
+        }
+
+        internal void xuat()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void nhap()
+        {
             throw new NotImplementedException();
         }
 
