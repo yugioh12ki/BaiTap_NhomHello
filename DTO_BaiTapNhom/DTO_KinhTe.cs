@@ -46,12 +46,12 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
-        internal void xuat()
+        public void xuat()
         {
             throw new NotImplementedException();
         }
 
-        internal void nhap()
+        public void nhap()
         {
             throw new NotImplementedException();
         }
