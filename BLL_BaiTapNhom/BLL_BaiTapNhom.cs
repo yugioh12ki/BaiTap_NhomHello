@@ -37,7 +37,7 @@ namespace BLL_BaiTapNhom
         {
             for (int i = 0; i < dsDeTai.Count; i++)
             {
-                dsDeTai[i].KinhPhi = dsDeTai[i].KinhPhi + (double)(dsDeTai[i].KinhPhi * (10 / 100));
+                dsDeTai[i].KinhPhi = dsDeTai[i].KinhPhi + (dsDeTai[i].KinhPhi * (10 / 100.0));
             }
         }
 
