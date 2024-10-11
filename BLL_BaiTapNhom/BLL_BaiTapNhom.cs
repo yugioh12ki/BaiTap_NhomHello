@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO_BaiTapNhom
+using DTO_BaiTapNhom;
 
 namespace BLL_BaiTapNhom
 {
     internal class BLL_BaiTapNhom
     {
+        static int phiTangThem;
         // 4.5
         public void XuatDSDeTaiCoGVHD(List<DTO_cDeTai> dsDeTai)
         {
-            bool checked = false;
+            bool check = false;
             try
             {
                 for (int i = 0; i < dsDeTai.Count; i++)
@@ -20,10 +21,10 @@ namespace BLL_BaiTapNhom
                     if (dsDeTai[i].HoTenGV != null)
                     {
                         XuatDeTai(dsDeTai[i]);  // Ai làm phần xuất danh sách đề tài thì viết tên hàm giống như này
-                        checked = true;
+                        check = true;
                     }
                 }
-                if (checked == false) {
+                if (check == false) {
                     throw new Exception("Các đề tài trong danh sách không có GVHD");
                 }
             } catch (Exception ex)
@@ -31,17 +32,15 @@ namespace BLL_BaiTapNhom
                     Console.WriteLine(ex.Message);
                 }
             }
-        }
-    
         // 4.6
         public void CapNhapKinhPhi(List<DTO_cDeTai> dsDeTai)
         {
             for (int i = 0; i < dsDeTai.Count; i++)
             {
-                dsDeTai[i].KinhPhi *= 10 %;
+                dsDeTai[i].KinhPhi = dsDeTai[i].KinhPhi + (double)(dsDeTai[i].KinhPhi * (10 / 100));
             }
         }
-    
+
         // 4.7
         public void XuatDSDeTaiTren10TR(List<DTO_cDeTai> dsDeTai)
         {
@@ -53,6 +52,5 @@ namespace BLL_BaiTapNhom
                 }
             }
         }
-
     }
 }
