@@ -17,6 +17,11 @@ namespace DTO_BaiTapNhom
         #endregion thuocTinh
         #region method
 
+        public DTO_NCLT()
+        {
+            is_thucTe = false;
+        }
+
         public DTO_NCLT(bool is_thucTe)
         {
             this.is_thucTe = is_thucTe;
@@ -34,7 +39,17 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
-        
+        public void nhap()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void xuat()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         #endregion method
     }
