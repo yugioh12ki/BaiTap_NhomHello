@@ -51,10 +51,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL_BaiTapNhom\BLL_BaiTapNhom.csproj">
-      <Project>{c4ebe05e-9fd6-4c29-bff8-fcbf3ff24757}</Project>
-      <Name>BLL_BaiTapNhom</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO_BaiTapNhom\DTO_BaiTapNhom.csproj">
       <Project>{a372a617-ac04-4fe1-b652-fd2f93fec74c}</Project>
       <Name>DTO_BaiTapNhom</Name>
