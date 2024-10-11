@@ -27,7 +27,7 @@ namespace DTO_BaiTapNhom
             this.is_thucTe = ktra;
         }
 
-        public override int TinhKinhPhi()
+        public override double TinhKinhPhi()
         {
             if (is_thucTe) return KinhPhi = 15000000;
             else return KinhPhi = 8000000;
