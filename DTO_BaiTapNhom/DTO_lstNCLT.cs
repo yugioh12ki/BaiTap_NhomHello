@@ -17,24 +17,14 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void getDSDeTai(int count)
+        public void getDSDeTai()
         {
-            for (int i = 0; i < count; i++)
-            {
-                Encoding encoding = Encoding.UTF8;
-                Console.WriteLine($"Nhập Thông Tin của Đề Tài {i + 1}");
-                DTO_NCLT nclt = new DTO_NCLT();
-                nclt.nhap();
-                lstNCLT.Add(nclt);
-            }
+            
         }
 
         public void putDSDeTai()
         {
-            foreach(DTO_NCLT nclt in lstNCLT)
-            {
-                nclt.xuat();
-            }
+            
         }
     }
 }

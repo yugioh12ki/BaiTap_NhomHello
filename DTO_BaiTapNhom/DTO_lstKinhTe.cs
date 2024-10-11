@@ -17,24 +17,14 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void getDSKinhTe(int count)
+        public void getDSKinhTe()
         {
-            for (int i = 0; i < count; i++)
-            {
-                Encoding encoding = Encoding.UTF8;
-                Console.WriteLine($"Nhập Thông Tin của Đề Tài Kinh Te {i + 1}");
-                DTO_KinhTe kinhte = new DTO_KinhTe();
-                kinhte.nhap();
-                lstKinhTe.Add(kinhte);
-            }
+            
         }
 
         public void putDSKinhTe()
         {
-            foreach (DTO_KinhTe kinhte in LstKinhTe)
-            {
-                kinhte.xuat();
-            }
+            
         }
     }
 }
