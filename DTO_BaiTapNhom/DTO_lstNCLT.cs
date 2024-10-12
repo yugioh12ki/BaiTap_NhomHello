@@ -26,5 +26,18 @@ namespace DTO_BaiTapNhom
         {
             
         }
+
+        // 4.7
+        public void XuatDSDeTaiTren10TR()
+        {
+
+            foreach (DTO_NCLT a in lstNCLT)
+            {
+                if (a.KinhPhi > 10000000)
+                {
+                    a.xuat();
+                }
+            }
+        }
     }
 }
