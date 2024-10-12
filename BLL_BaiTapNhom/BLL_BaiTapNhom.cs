@@ -61,6 +61,7 @@ namespace BLL_BaiTapNhom
             deTaiMoi.KinhPhi = deTaiMoi.TinhKinhPhi();
             // Thêm vào danh sách
             dsDeTai.Add(deTaiMoi);
+        }
 
 
             //4.3
@@ -213,7 +214,8 @@ namespace BLL_BaiTapNhom
                 }
             }
 
-        }
     }
 }
+
+
 
