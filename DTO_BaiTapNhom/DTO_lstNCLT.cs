@@ -27,6 +27,7 @@ namespace DTO_BaiTapNhom
             
         }
 
+
         // 4.7 Xuất danh sách đề tài của NCLT mà kinh phí trên 10 triệu 
         public void XuatDSDeTaiTren10TR()
         {
@@ -71,6 +72,5 @@ namespace DTO_BaiTapNhom
                 a.KinhPhi = a.KinhPhi + (a.KinhPhi * (10 / 100.0));
             }
         }
-
     }
 }
