@@ -42,7 +42,7 @@ namespace DTO_BaiTapNhom
             if (soCauHoi > 100)
                 return soCauHoi * 550;
             else
-                return soCauHoi * 450;
+                return soCauHoi * 400;
             throw new NotImplementedException();
         }
 
