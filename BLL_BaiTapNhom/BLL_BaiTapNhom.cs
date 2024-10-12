@@ -12,13 +12,11 @@ namespace BLL_BaiTapNhom
     {
         //4.2
         public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai){
-            DTO_cDeTai deTaiMoi = new DTO_cDeTai();
+            DTO_cDeTai deTaiMoi = null;
             Console.WriteLine("nhap ma so de tai:");
             deTaiMoi.maDeTai = Console.ReadLine();
             Console.WriteLine("nhap ten de tai:");
             deTaiMoi.tenDeTai = Console.ReadLine();
-            Console.WriteLine("nhap kinh phi:");
-            deTaiMoi.KinhPhi = double.Parse(Console.ReadLine());
             Console.WriteLine("nhap ten trương nhom:");
             deTaiMoi.truongNhom = Console.ReadLine();
             Console.WriteLine("nhap giang vien huong dan:");
@@ -27,9 +25,34 @@ namespace BLL_BaiTapNhom
             deTaiMoi.ngayBatDau = Console.ReadLine();
             Console.WriteLine("nhap ngay ket thuc:");
             deTaiMoi.ngayKetThuc = Console.ReadLine();
+            Console.WriteLine("Chon linh vuc de tai(1: Nghiên cứu lý thuyết, 2: Kinh tế, 3: Cong nghe):");
+            int loaiDeTai = int.Parse(Console.ReadLine());
+                switch (loaiDeTai){
+                    case 1: // Nghiên cứu lý thuyết
+                    Console.WriteLine("Có áp dụng thực tế không (true/false)?");
+                    bool is_thucTe = bool.Parse(Console.ReadLine());
+                    deTaiMoi = new DTO_NCLT(maDeTai, tenDeTai, truongNhom, hoTenGV, ngayBatDau, ngayKetThuc, is_thucTe);
+                    break;
+                    case 2: // Kinh tế
+                    Console.WriteLine("Nhập số câu hỏi khảo sát:");
+                    int soCauHoi = int.Parse(Console.ReadLine());
+                    deTaiMoi = new DTO_KinhTe(maDeTai, tenDeTai, truongNhom, hoTenGV, ngayBatDau, ngayKetThuc, soCauHoi);
+                    break;
+                    case 3: // Công nghệ
+                    Console.WriteLine("Chọn môi trường triển khai (web/mobile/window):");
+                    string MoiTruong = Console.ReadLine();
+                    deTaiMoi = new DTO_CongNghe(maDeTai, tenDeTai, truongNhom, hoTenGV, ngayBatDau, ngayKetThuc, MoiTruong);
+                    break;
+                    default:
+                    Console.WriteLine("Lựa chọn không hợp lệ.");
+                    return;      
+            }
+            // Tính kinh phí
+            deTaiMoi.KinhPhi = deTaiMoi.TinhKinhPhi();
+            // Thêm vào danh sách
             dsDeTai.Add(deTaiMoi);
-            Console.WriteLine("Đề tài đã được thêm thành công.");
-        }
+           
+           
         //4.3
         public void xuat(DTO_cDeTai dsDeTai){
             Console.WriteLine($"ma de tai: {dsDeTai.maDeTai}, Ten De Tai: {dsDeTai.tenDeTai}, Kinh phi: {dsDeTai.KinhPhi}, Truong nhom la: {dsDeTai.truongNhom}, Giao Vien hướng dẫn: {dsDeTai.hoTenGV}, Ngay bat dau:{dsDeTai.ngayBatDau}, Ngay ket thuc: {dsDeTai.ngayKetThuc}");
@@ -52,6 +75,7 @@ namespace BLL_BaiTapNhom
                 Console.WriteLine("khong tim thay tu khoa nay.");
             }
          }
+        
          
         // 4.5
         public void XuatDSDeTaiCoGVHD(List<DTO_cDeTai> dsDeTai)
