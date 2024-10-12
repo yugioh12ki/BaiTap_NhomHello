@@ -10,6 +10,49 @@ namespace BLL_BaiTapNhom
 {
     public class BLL_BaiTapNhom
     {
+        //4.2
+        public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai){
+            DTO_cDeTai deTaiMoi = new DTO_cDeTai();
+            Console.WriteLine("nhap ma so de tai:");
+            deTaiMoi.maDeTai = Console.ReadLine();
+            Console.WriteLine("nhap ten de tai:");
+            deTaiMoi.tenDeTai = Console.ReadLine();
+            Console.WriteLine("nhap kinh phi:");
+            deTaiMoi.KinhPhi = double.Parse(Console.ReadLine());
+            Console.WriteLine("nhap ten trương nhom:");
+            deTaiMoi.truongNhom = Console.ReadLine();
+            Console.WriteLine("nhap giang vien huong dan:");
+            deTaiMoi.hoTenGV = Console.ReadLine();
+            Console.WriteLine("nhap ngay bat dau:");
+            deTaiMoi.ngayBatDau = Console.ReadLine();
+            Console.WriteLine("nhap ngay ket thuc:");
+            deTaiMoi.ngayKetThuc = Console.ReadLine();
+            dsDeTai.Add(deTaiMoi);
+            Console.WriteLine("Đề tài đã được thêm thành công.");
+        }
+        //4.3
+        public void xuat(DTO_cDeTai dsDeTai){
+            Console.WriteLine($"ma de tai: {dsDeTai.maDeTai}, Ten De Tai: {dsDeTai.tenDeTai}, Kinh phi: {dsDeTai.KinhPhi}, Truong nhom la: {dsDeTai.truongNhom}, Giao Vien hướng dẫn: {dsDeTai.hoTenGV}, Ngay bat dau:{dsDeTai.ngayBatDau}, Ngay ket thuc: {dsDeTai.ngayKetThuc}");
+         }
+         //4.4
+         public void TimKiemVaXuatKetQua(List<DTO_cDeTai> dsDeTai){
+            // nhap từ khóa tìm kiếm từ người dùng
+            Console.WriteLine("nhap tu khoa tiem kiem :");
+            string tuKhoa = Console.ReadLine();
+            List<DTO_cDeTai> ketQua = new List<DTO_cDeTai>();
+            foreach (DTO_cDeTai deTai in dsDeTai){
+                if (deTai.maDeTai.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.tenDeTai.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) ||deTai.truongNhom.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.hoTenGV.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase)){
+                    ketQua.Add(deTai);
+                }                
+            }
+            if (ketQua.Count > 0){
+                Console.WriteLine($"Tìm thấy {ketQua.Count} đề tài khớp với từ khóa:");
+            }
+            else {
+                Console.WriteLine("khong tim thay tu khoa nay.");
+            }
+         }
+         
         // 4.5
         public void XuatDSDeTaiCoGVHD(List<DTO_cDeTai> dsDeTai)
         {
