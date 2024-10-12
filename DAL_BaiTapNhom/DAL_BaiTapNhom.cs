@@ -37,7 +37,7 @@ namespace DAL_BaiTapNhom
             }
             catch (Exception e)
             {
-                //Console.WriteLine("Loi doc File: " + e.Message);
+                Console.WriteLine("Loi doc File: " + e.Message);
                 return null;
             }
         }
