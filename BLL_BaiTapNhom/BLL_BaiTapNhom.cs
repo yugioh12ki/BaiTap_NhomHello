@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO_BaiTapNhom;
+using DAL_BaiTapNhom;
 
 namespace BLL_BaiTapNhom
 {
