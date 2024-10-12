@@ -51,7 +51,7 @@ namespace DTO_BaiTapNhom
                 Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, So cau hoi: {SoCauHoi}");
         }
 
-        public void nhap()
+            public void nhap()
         {
             throw new NotImplementedException();
         }

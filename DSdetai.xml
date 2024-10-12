@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Danhsachdetai>
+  <Detai>
+    <Madetai>20330</Madetai>
+    <Tendetai>Nghien cuu ly thuyet</Tendetai>
+    <Kinhphi>8000000</Kinhphi>
+    <Truongnhom>Nguyen Van A</Truongnhom>
+    <Thoigianbbatdau>15/10/2024</Thoigianbbatdau>
+    <Thoigianketthuc>30/10/2024</Thoigianketthuc>
+    <HotenGVHD>Tran Dac Tot</HotenGVHD>
+  </Detai>
+  <Detai>
+    <Madetai>20331</Madetai>
+    <Tendetai>Kinh te</Tendetai>
+    <Kinhphi>12000000</Kinhphi>
+    <Truongnhom>Nguyen Van B</Truongnhom>
+    <Thoigianbbatdau>15/11/2024</Thoigianbbatdau>
+    <Thoigianketthuc>1/12/2024</Thoigianketthuc>
+    <HotenGVHD>Duong Van Duong</HotenGVHD>
+  </Detai>
+  <Detai>
+    <Madetai>20332</Madetai>
+    <Tendetai>Cong nghe</Tendetai>
+    <Kinhphi>10000000</Kinhphi>
+    <Truongnhom>Nguyen Van C</Truongnhom>
+    <Thoigianbbatdau>20/10/2024</Thoigianbbatdau>
+    <Thoigianketthuc>16/12/2024</Thoigianketthuc>
+    <HotenGVHD>Nguyen The Kiet</HotenGVHD>
+  </Detai>
+</Danhsachdetai>

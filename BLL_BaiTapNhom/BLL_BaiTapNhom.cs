@@ -13,6 +13,17 @@ namespace BLL_BaiTapNhom
             4.2
             public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai)
         {
+        DAL_BaiTapNhom baitapnhomdal=new DAL_BaiTapNhom();
+        public BLL_BaiTapNhom()
+        {
+
+        }
+        public List<DTO_cDeTai> getlistDeTai()
+        {
+            return DAL_BaiTapNhom.readFile("C:\\Users\\acer\\source\\repos\\BaiTap_NhomHello");
+        }
+        //4.2
+        public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai) {
             DTO_cDeTai deTaiMoi = null;
             Console.WriteLine("nhap ma so de tai:");
             deTaiMoi.maDeTai = Console.ReadLine();
@@ -28,8 +39,7 @@ namespace BLL_BaiTapNhom
             deTaiMoi.ngayKetThuc = Console.ReadLine();
             Console.WriteLine("Chon linh vuc de tai(1: Nghiên cứu lý thuyết, 2: Kinh tế, 3: Cong nghe):");
             int loaiDeTai = int.Parse(Console.ReadLine());
-            switch (loaiDeTai)
-            {
+            switch (loaiDeTai) {
                 case 1: // Nghiên cứu lý thuyết
                     Console.WriteLine("Có áp dụng thực tế không (true/false)?");
                     bool is_thucTe = bool.Parse(Console.ReadLine());
@@ -55,14 +65,10 @@ namespace BLL_BaiTapNhom
             dsDeTai.Add(deTaiMoi);
 
 
-            // 4.3     hàm xuất đã có sẵn trong các DTO nên phần logic viết ở DTO   
-            /*
-            public void xuat(DTO_cDeTai dsDeTai)
-            {
+            //4.3
+            public void xuat(DTO_cDeTai dsDeTai) {
                 Console.WriteLine($"ma de tai: {dsDeTai.maDeTai}, Ten De Tai: {dsDeTai.tenDeTai}, Kinh phi: {dsDeTai.KinhPhi}, Truong nhom la: {dsDeTai.truongNhom}, Giao Vien hướng dẫn: {dsDeTai.hoTenGV}, Ngay bat dau:{dsDeTai.ngayBatDau}, Ngay ket thuc: {dsDeTai.ngayKetThuc}");
             }
-            */
-
             //4.4
             public void TimKiemVaXuatKetQua(List<DTO_cDeTai> dsDeTai) {
                 // nhap từ khóa tìm kiếm từ người dùng
@@ -83,8 +89,7 @@ namespace BLL_BaiTapNhom
             }
 
 
-            // 4.5 Di chuyển sang lớp DTO
-            /*
+            // 4.5
             public void XuatDSDeTaiCoGVHD(List<DTO_cDeTai> dsDeTai)
             {
                 bool check = false;
@@ -108,11 +113,7 @@ namespace BLL_BaiTapNhom
                     Console.WriteLine(ex.Message);
                 }
             }
-            */
-            
-            
-            // 4.6 chuyển qua lớp DTO
-            /*
+            // 4.6
             public void CapNhapKinhPhi(List<DTO_cDeTai> dsDeTai)
             {
                 for (int i = 0; i < dsDeTai.Count; i++)
@@ -120,12 +121,11 @@ namespace BLL_BaiTapNhom
                     dsDeTai[i].KinhPhi = dsDeTai[i].KinhPhi + (dsDeTai[i].KinhPhi * (10 / 100.0));
                 }
             }
-            */
 
-            // 4.7 Di chuyển hàm sang lớp DTO
-            /*
-            public void XuatDSDeTaiTren10TR(List<DTO_cDeTai> dsDeTai)
+            // 4.7
+            public void XuatDSDeTaiTren10TR()
             {
+                
                 foreach (DTO_cDeTai a in dsDeTai)
                 {
                     if (a.KinhPhi > 10)
@@ -134,9 +134,8 @@ namespace BLL_BaiTapNhom
                     }
                 }
             }
-            */
-                
             //4.8
+
             public void XuatDSDeTaiLyThuyetApDungThucTe(List<DTO_cDeTai> dsDeTai)
             {
                 bool check = false;
@@ -160,16 +159,15 @@ namespace BLL_BaiTapNhom
                     Console.WriteLine(ex.Message);
                 }
             }
-
             //4.9
-            public void XuatDSDeTaiKinhTeTren100CauHoi(List<DTO_cDeTai> dsDeTai)
+            public void XuatDSDeTaiKinhTeTren100CauHoi(List<DTO_CongNghe> dskinhte)
             {
                 bool check = false;
                 try
                 {
-                    for (int i = 0; i < dsDeTai.Count; i++)
+                    for (int i = 0; i < dskinhte.Count; i++)
                     {
-                        if (dsDeTai[i].LoaiLinhVuc == "Kinh tế" && dsDeTai[i].SoCauHoiKhaoSat > 100)
+                        if (dskinhte[i].MoiTruong == "web")
                         {
                             xuat(dsDeTai[i]);  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
                             check = true;
@@ -211,6 +209,7 @@ namespace BLL_BaiTapNhom
                 }
             }
 
+        }
     }
 }
 
