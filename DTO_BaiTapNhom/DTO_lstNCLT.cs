@@ -17,12 +17,18 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void getDSDeTai()
+        public void NhapDSDeTai(int count)
         {
-            
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine($"Nhập Thông Tin của Đề Tài NCLT {i +1 }");
+                DTO_NCLT nclt = new DTO_NCLT();
+                nclt.nhapNCLT();
+                lstNCLT.Add(nclt);
+            }
         }
 
-        public void putDSDeTai()
+        public void XuatDSDeTai()
         {
             
         }
@@ -35,7 +41,7 @@ namespace DTO_BaiTapNhom
             {
                 if (a.KinhPhi > 10000000)
                 {
-                    a.xuat();
+                    a.Xuat();
                 }
             }
         }
@@ -49,7 +55,7 @@ namespace DTO_BaiTapNhom
                 foreach (DTO_NCLT a in LstNCLT){
                     if (a.HoTenGV !=  null)
                     {
-                        a.xuat();
+                        a.Xuat();
                         check = true;
                     }
                 }

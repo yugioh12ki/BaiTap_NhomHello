@@ -52,13 +52,16 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
-        public void xuat()
+        public override void Xuat()
         {
             Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, Moi truong: {MoiTruong}");
         }
 
-        public void nhap()
+        public void nhapCN()
         {
+            base.Nhap();
+            Console.WriteLine("Nhập môi trường phát triển cho đề tài công nghệ:");
+            moiTruong = Console.ReadLine();
             throw new NotImplementedException();
         }
 

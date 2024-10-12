@@ -39,17 +39,26 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
-        public void nhap()
+        public void nhapNCLT()
         {
+            string check = "Y";
+            base.Nhap();
+            do {
+                Console.WriteLine("Xác nhận có thực tế nghiên cứu lý thyết không (Y/N): ");
+                check = Console.ReadLine();
+            } while(check != "Y" || check != "N");
+            if (check == "Y")
+            {
+                is_thucTe = true;
+            }
+            else is_thucTe = false;
             throw new NotImplementedException();
         }
 
-        public void xuat()
+        public override void Xuat()
         {
             Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, Thuc te: {Is_thucTe}");
         }
-
-
 
         #endregion method
     }

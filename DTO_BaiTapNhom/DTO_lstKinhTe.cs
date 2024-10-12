@@ -17,14 +17,23 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void getDSKinhTe()
+        public void NhapDSKinhTe(int count)
         {
-            
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine($"Nhập Thông Tin của Đề Tài NCLT {i + 1}");
+                DTO_KinhTe kinhte = new DTO_KinhTe();
+                kinhte.nhapKT();
+                lstKinhTe.Add(kinhte);
+            }
         }
 
-        public void putDSKinhTe()
+        public void XuatDSKinhTe()
         {
-            
+            foreach (DTO_KinhTe a in lstKinhTe)
+            {
+                a.Xuat();
+            }
         }
 
         // 4.7 Xuất danh sách đề tài của kinh tế mà kinh phí trên 10 triệu 
@@ -34,12 +43,12 @@ namespace DTO_BaiTapNhom
             {
                 if (a.KinhPhi > 10000000)
                 {
-                    a.xuat();
+                    a.Xuat();
                 }
             }
         }
-
-        // 4.5 Xuất danh sách đề tài của kinh tế có GVHD
+        
+        // 4.5 Xuất danh sách đề tài của kinh tế có GVHD 
         public void XuatDSDeTaiCoGVHD()
         {
             bool check = false;
@@ -49,7 +58,7 @@ namespace DTO_BaiTapNhom
                 {
                     if (a.HoTenGV != null)
                     {
-                        a.xuat();
+                        a.Xuat();
                         check = true;
                     }
                 }

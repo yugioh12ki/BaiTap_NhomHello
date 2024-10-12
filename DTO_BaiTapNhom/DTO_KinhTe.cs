@@ -12,8 +12,6 @@ namespace DTO_BaiTapNhom
 
         private int soCauHoi;
 
-        
-
         public int SoCauHoi { get => soCauHoi; set => soCauHoi = value; }
 
         #endregion ThuocTinh
@@ -46,13 +44,16 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
-        public void xuat()
+        public override void Xuat()
         {
-                Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, So cau hoi: {SoCauHoi}");
+            Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, So cau hoi: {SoCauHoi}");
         }
 
-            public void nhap()
+        public void nhapKT()
         {
+            base.Nhap();
+            Console.WriteLine("Nhập số lượng câu hỏi của Đề Tài Kinh Tế: ");
+            soCauHoi = Int32.Parse(Console.ReadLine());
             throw new NotImplementedException();
         }
 

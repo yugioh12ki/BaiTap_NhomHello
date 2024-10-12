@@ -51,17 +51,32 @@ namespace DTO_BaiTapNhom
             this.hoTenGV = hoTenGV;
         }
 
-        public abstract double TinhKinhPhi();
+        
 
-        public void insertDeTai()
+        public void Nhap()
         {
-
+            Console.WriteLine("Nhập mã số đề tài: ");
+            maDeTai = Console.ReadLine();
+            Console.WriteLine("Nhập tên đề tài: ");
+            tenDeTai = Console.ReadLine();
+            Console.WriteLine("Nhập tên trưởng nhóm đề tài");
+            truongNhom = Console.ReadLine();
+            Console.WriteLine("Nhập giảng viên hướng dẫn cho đề tài:");
+            hoTenGV = Console.ReadLine();
+            Console.WriteLine("Nhập ngày bắt đầu đề tài:");
+            ngayBatDau = Console.ReadLine();
+            Console.WriteLine("Nhập ngày kết thúc đề tài:");
+            ngayKetThuc = Console.ReadLine();
         }
+
+        public abstract void Xuat();
+
+        public abstract double TinhKinhPhi();
 
         #endregion method
     }
     //tạo lớp con của ĐTO_cDeTai
-    public class Concrete_cDeTai : DTO_cDeTai
+    /*public class Concrete_cDeTai : DTO_cDeTai
     {
         // Hàm khởi tạo, nếu cần bạn có thể thêm tham số tùy ý
         public Concrete_cDeTai() : base() { }
@@ -73,6 +88,6 @@ namespace DTO_BaiTapNhom
             // Giả sử đây là tính kinh phi
             return this.KinhPhi;
         }
-    }
+    }*/
 
 }

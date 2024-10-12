@@ -17,14 +17,23 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void getDSKinhTe()
+        public void NhapDSKinhTe(int count)
         {
-            
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine($"Nhập Thông Tin của Đề Tài NCLT {i + 1}");
+                DTO_CongNghe congNghe = new DTO_CongNghe();
+                congNghe.nhapCN();
+                lstCongNghe.Add(congNghe);
+            }
         }
 
-        public void putDSKinhTe()
+        public void XuatDSKinhTe()
         {
-            
+            foreach (DTO_CongNghe a in lstCongNghe)
+            {
+                a.Xuat();
+            }
         }
 
         // 4.7 Xuất danh sách đề tài của Công nghệ mà kinh phí trên 10 triệu 
@@ -34,7 +43,7 @@ namespace DTO_BaiTapNhom
             {
                 if (a.KinhPhi > 10000000)
                 {
-                    a.xuat();
+                    a.Xuat();
                 }
             }
         }
@@ -49,7 +58,7 @@ namespace DTO_BaiTapNhom
                 {
                     if (a.HoTenGV != null)
                     {
-                        a.xuat();
+                        a.Xuat();
                         check = true;
                     }
                 }
