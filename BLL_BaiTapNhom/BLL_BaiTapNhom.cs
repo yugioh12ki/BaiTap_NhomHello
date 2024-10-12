@@ -10,6 +10,15 @@ namespace BLL_BaiTapNhom
 {
     public class BLL_BaiTapNhom
     {
+        DAL_BaiTapNhom baitapnhomdal=new DAL_BaiTapNhom();
+        public BLL_BaiTapNhom()
+        {
+
+        }
+        public List<DTO_cDeTai> getlistDeTai()
+        {
+            return DAL_BaiTapNhom.readFile("C:\\Users\\acer\\source\\repos\\BaiTap_NhomHello");
+        }
         //4.2
         public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai){
             DTO_cDeTai deTaiMoi = null;

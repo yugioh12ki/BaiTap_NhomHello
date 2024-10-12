@@ -55,4 +55,19 @@ namespace DTO_BaiTapNhom
 
         #endregion method
     }
+    //tạo lớp con của ĐTO_cDeTai
+    public class Concrete_cDeTai : DTO_cDeTai
+    {
+        // Hàm khởi tạo, nếu cần bạn có thể thêm tham số tùy ý
+        public Concrete_cDeTai() : base() { }
+        public Concrete_cDeTai(string maDeTai, string tenDeTai, int kinhPhi, string truongNhom, string ngayBatDau, string ngayKetThuc, string hoTenGV)
+            : base(maDeTai, tenDeTai, kinhPhi, truongNhom, ngayBatDau, ngayKetThuc, hoTenGV) { }
+        // Hiện thực hóa phương thức abstract từ DTO_cDeTai
+        public override double TinhKinhPhi()
+        {
+            // Giả sử đây là tính kinh phi
+            return this.KinhPhi;
+        }
+    }
+
 }

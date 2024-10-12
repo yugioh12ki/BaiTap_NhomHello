@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaiTap_NhomHello", "BaiTap_Nhom\BaiTap_NhomHello.csproj", "{9500FE72-3C55-49FE-8CEF-D58E0C568B64}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E63F4E87-77E5-4DBC-8DE9-9EEF0EA330EB}"
+	ProjectSection(SolutionItems) = preProject
+		DSdetai.xml = DSdetai.xml
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_BaiTapNhom", "DAL_BaiTapNhom\DAL_BaiTapNhom.csproj", "{D1ADC828-9F7C-4A97-AA42-2A58C6A2457E}"
 EndProject
