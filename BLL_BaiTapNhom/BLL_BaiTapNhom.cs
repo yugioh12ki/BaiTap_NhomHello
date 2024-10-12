@@ -1,16 +1,14 @@
-﻿using DTO_BaiTapNhom;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL_BaiTapNhom;
+using DTO_BaiTapNhom;
 
 namespace BLL_BaiTapNhom
 {
-    public class BLL_BaiTapNhom
+    internal class BLL_BaiTapNhom
     {
-        DAL_BaiTapNhom baitapnhomdal=new DAL_BaiTapNhom();
         public BLL_BaiTapNhom()
         {
 
@@ -20,7 +18,8 @@ namespace BLL_BaiTapNhom
             return DAL_BaiTapNhom.readFile("C:\\Users\\acer\\source\\repos\\BaiTap_NhomHello");
         }
         //4.2
-        public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai) {
+        public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai)
+        {
             DTO_cDeTai deTaiMoi = null;
             Console.WriteLine("nhap ma so de tai:");
             deTaiMoi.maDeTai = Console.ReadLine();
@@ -36,7 +35,8 @@ namespace BLL_BaiTapNhom
             deTaiMoi.ngayKetThuc = Console.ReadLine();
             Console.WriteLine("Chon linh vuc de tai(1: Nghiên cứu lý thuyết, 2: Kinh tế, 3: Cong nghe):");
             int loaiDeTai = int.Parse(Console.ReadLine());
-            switch (loaiDeTai) {
+            switch (loaiDeTai)
+            {
                 case 1: // Nghiên cứu lý thuyết
                     Console.WriteLine("Có áp dụng thực tế không (true/false)?");
                     bool is_thucTe = bool.Parse(Console.ReadLine());
@@ -63,24 +63,30 @@ namespace BLL_BaiTapNhom
 
 
             //4.3
-            public void xuat(DTO_cDeTai dsDeTai) {
+            public void xuat(DTO_cDeTai dsDeTai)
+            {
                 Console.WriteLine($"ma de tai: {dsDeTai.maDeTai}, Ten De Tai: {dsDeTai.tenDeTai}, Kinh phi: {dsDeTai.KinhPhi}, Truong nhom la: {dsDeTai.truongNhom}, Giao Vien hướng dẫn: {dsDeTai.hoTenGV}, Ngay bat dau:{dsDeTai.ngayBatDau}, Ngay ket thuc: {dsDeTai.ngayKetThuc}");
             }
             //4.4
-            public void TimKiemVaXuatKetQua(List<DTO_cDeTai> dsDeTai) {
+            public void TimKiemVaXuatKetQua(List<DTO_cDeTai> dsDeTai)
+            {
                 // nhap từ khóa tìm kiếm từ người dùng
                 Console.WriteLine("nhap tu khoa tiem kiem :");
                 string tuKhoa = Console.ReadLine();
                 List<DTO_cDeTai> ketQua = new List<DTO_cDeTai>();
-                foreach (DTO_cDeTai deTai in dsDeTai) {
-                    if (deTai.maDeTai.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.tenDeTai.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.truongNhom.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.hoTenGV.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase)) {
+                foreach (DTO_cDeTai deTai in dsDeTai)
+                {
+                    if (deTai.maDeTai.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.tenDeTai.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.truongNhom.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase) || deTai.hoTenGV.Contains(tuKhoa, StringComparison.OrdinalIgnoreCase))
+                    {
                         ketQua.Add(deTai);
                     }
                 }
-                if (ketQua.Count > 0) {
+                if (ketQua.Count > 0)
+                {
                     Console.WriteLine($"Tìm thấy {ketQua.Count} đề tài khớp với từ khóa:");
                 }
-                else {
+                else
+                {
                     Console.WriteLine("khong tim thay tu khoa nay.");
                 }
             }
@@ -122,7 +128,7 @@ namespace BLL_BaiTapNhom
             // 4.7
             public void XuatDSDeTaiTren10TR()
             {
-                
+
                 foreach (DTO_cDeTai a in dsDeTai)
                 {
                     if (a.KinhPhi > 10)
