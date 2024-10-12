@@ -53,6 +53,11 @@ namespace DTO_BaiTapNhom
 
         public abstract double TinhKinhPhi();
 
+        public void insertDeTai()
+        {
+
+        }
+
         #endregion method
     }
     //tạo lớp con của ĐTO_cDeTai
