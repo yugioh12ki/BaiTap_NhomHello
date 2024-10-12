@@ -46,7 +46,7 @@ namespace DTO_BaiTapNhom
 
         public void xuat()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, Thuc te: {Is_thucTe}");
         }
 
 

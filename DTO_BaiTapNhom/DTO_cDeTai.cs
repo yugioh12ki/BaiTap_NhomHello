@@ -13,7 +13,7 @@ namespace DTO_BaiTapNhom
         private string maDeTai;
         private string tenDeTai;
         private double kinhPhi;
-        private string truongNhom;
+        private string truongNhom;  
         private string ngayBatDau;
         private string ngayKetThuc;
         private string hoTenGV;

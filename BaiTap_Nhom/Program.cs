@@ -10,6 +10,7 @@ namespace BaiTap_NhomHello
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
