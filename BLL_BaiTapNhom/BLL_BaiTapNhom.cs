@@ -54,5 +54,81 @@ namespace BLL_BaiTapNhom
                 }
             }
         } 
-    }
-}
+        //4.8
+       
+        public void XuatDSDeTaiLyThuyetApDungThucTe(List<DTO_cDeTai> dsDeTai)
+        {
+         bool check = false;
+         try
+         {
+             for (int i = 0; i < dsDeTai.Count; i++)
+              {
+                    if (dsDeTai[i].LoaiLinhVuc == "Lý thuyết" && dsDeTai[i].ApDungThucTe)
+                    {
+                        xuat(dsDeTai[i]);  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                        check = true;
+                    }
+               }
+              if (check == false)
+               {
+            throw new Exception("Không có đề tài nghiên cứu lý thuyết nào có khả năng triển khai vào thực tế.");
+               }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        //4.9
+        public void XuatDSDeTaiKinhTeTren100CauHoi(List<DTO_cDeTai> dsDeTai)
+        {
+            bool check = false;
+            try
+            {
+                 for (int i = 0; i < dsDeTai.Count; i++)
+                  {
+                    if (dsDeTai[i].LoaiLinhVuc == "Kinh tế" && dsDeTai[i].SoCauHoiKhaoSat > 100)
+                    {
+                            xuat(dsDeTai[i]);  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                            check = true;
+                         }
+                   }
+                   if (check == false)
+                   {
+                        throw new Exception("Không có đề tài kinh tế nào có số câu hỏi khảo sát trên 100 câu.");
+                   }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        //4.10
+        public void XuatDSDeTaiTren4Thang(List<DTO_cDeTai> dsDeTai)
+        {
+            bool check = false;
+            try
+            {
+                for (int i = 0; i < dsDeTai.Count; i++)
+                {
+                    TimeSpan thoiGianThucHien = dsDeTai[i].ThoiGianKetThuc - dsDeTai[i].ThoiGianBatDau;
+                    if (thoiGianThucHien.TotalDays > 120) // 4 tháng = 120 ngày
+                    {
+                        xuat(dsDeTai[i]);  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    throw new Exception("Không có đề tài nào có thời gian thực hiện trên 4 tháng.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+     }
+ }
+
