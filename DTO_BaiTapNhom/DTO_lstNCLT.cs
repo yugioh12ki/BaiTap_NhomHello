@@ -64,7 +64,7 @@ namespace DTO_BaiTapNhom
             }
         }
         
-        // 4.6 cập nhập kinh phí các đề tài của NCLT
+        // 4.6 cập nhập kinh phí các đề tài của NCLT --> (OK) Gia Vinh Xong 4.5 -> 4.7
         public void CapNhapKinhPhi()
         {
             foreach (DTO_NCLT a in LstNCLT)
