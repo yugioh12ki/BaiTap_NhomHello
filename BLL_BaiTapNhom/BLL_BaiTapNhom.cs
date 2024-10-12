@@ -8,7 +8,7 @@ using DAL_BaiTapNhom;
 
 namespace BLL_BaiTapNhom
 {
-    internal class BLL_BaiTapNhom
+    public class BLL_BaiTapNhom
     {
         public BLL_BaiTapNhom()
         {
