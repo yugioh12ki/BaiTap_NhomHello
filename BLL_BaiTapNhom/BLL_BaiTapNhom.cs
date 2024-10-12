@@ -10,7 +10,6 @@ namespace BLL_BaiTapNhom
 {
     public class BLL_BaiTapNhom
     {
-        static int phiTangThem;
         // 4.5
         public void XuatDSDeTaiCoGVHD(List<DTO_cDeTai> dsDeTai)
         {
@@ -21,7 +20,7 @@ namespace BLL_BaiTapNhom
                 {
                     if (dsDeTai[i].HoTenGV != null)
                     {
-                        XuatDeTai(dsDeTai[i]);  // Ai làm phần xuất danh sách đề tài thì viết tên hàm giống như này
+                        xuat(dsDeTai[i]);  // Ai làm phần xuất danh sách đề tài thì viết tên hàm xuất giống như này
                         check = true;
                     }
                 }
@@ -47,11 +46,11 @@ namespace BLL_BaiTapNhom
         // 4.7
         public void XuatDSDeTaiTren10TR(List<DTO_cDeTai> dsDeTai)
         {
-            for (int i = 0; i < dsDeTai.Count; i++)
+           foreach (DTO_cDeTai a in dsDeTai)
             {
-                if (dsDeTai[i].KinhPhi > 10)
+                if (a.KinhPhi > 10)
                 {
-                    XuatDeTai(dsDeTai[i]);
+                    xuat(a);
                 }
             }
         } 
