@@ -9,7 +9,7 @@ using DTO_BaiTapNhom;
 
 namespace BaiTap_Nhom
 {
-    public class GUI_BaiTapNhom
+    public class GUIBaiTapNhom
     {
         public void MenuChucNang()
         {

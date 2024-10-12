@@ -8,11 +8,11 @@ using DTO_BaiTapNhom;
 
 namespace DAL_BaiTapNhom
 {
-    public class DAL_BaiTapNhom
+    public class DALBaiTapNhom
     {
-        List<DTO_cDeTai> _listDetai = new List<DTO_cDeTai>();
-        public List<DTO_cDeTai> ListDetai { get => _listDetai; set => _listDetai = value; }
-        public List<DTO_cDeTai> readFile(string filename)
+        List<DTO_NCLT> _listDetai = new List<DTO_NCLT>();
+        public List<DTO_NCLT> ListDetai { get => _listDetai; set => _listDetai = value; }
+        public List<DTO_NCLT> readFile(string filename)
         {
             Console.InputEncoding = UnicodeEncoding.Unicode;
             try
