@@ -17,7 +17,7 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void NhapDSDeTai(int count)
+        public void NhapDSNCLT(int count)
         {
             for (int i = 0; i < count; i++)
             {
@@ -28,7 +28,7 @@ namespace DTO_BaiTapNhom
             }
         }
 
-        public void XuatDSDeTai()
+        public void XuatDSNCLT()
         {
             
         }
@@ -78,6 +78,10 @@ namespace DTO_BaiTapNhom
                 a.KinhPhi = a.KinhPhi + (a.KinhPhi * (10 / 100.0));
             }
         }
+<<<<<<< HEAD
+
+        
+=======
         //4.8 xuất danh sách có đề tài thuộc lĩnh vực nghiên cứu lí thuyết có khả năng triển khai vào thực tế
         public void XuatDSDeTaiLyThuyetApDungThucTe()
         {
@@ -152,5 +156,6 @@ namespace DTO_BaiTapNhom
             }
         }
 
+>>>>>>> 3d3e23658a4ea2dbebf091a82131f4e102898645
     }
 }

@@ -18,7 +18,7 @@ namespace DTO_BaiTapNhom
 
         }
 
-        public void NhapDSKinhTe(int count)
+        public void NhapDSCongNghe(int count)
         {
             for (int i = 0; i < count; i++)
             {
@@ -29,7 +29,7 @@ namespace DTO_BaiTapNhom
             }
         }
 
-        public void XuatDSKinhTe()
+        public void XuatDSCongNghe()
         {
             foreach (DTO_CongNghe a in lstCongNghe)
             {
