@@ -78,83 +78,96 @@ namespace DTO_BaiTapNhom
                 a.KinhPhi = a.KinhPhi + (a.KinhPhi * (10 / 100.0));
             }
         }
+
 <<<<<<< HEAD
 
-        
 =======
-        //4.8 xuất danh sách có đề tài thuộc lĩnh vực nghiên cứu lí thuyết có khả năng triển khai vào thực tế
-        public void XuatDSDeTaiLyThuyetApDungThucTe()
-        {
-            bool check = false;
-            try
-            {
-                foreach (DTO_NCLT a in LstNCLT)
-                {
-                    if (a.MaDeTai == "Lý thuyết" && a.Is_thucTe)
-                    {
-                        a.Xuat();   
-                        check = true;
-                    }
-                }
-                if (!check)
-                {
-                    throw new Exception("Không có đề tài nghiên cứu lý thuyết nào có khả năng triển khai vào thực tế.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        //4.9 in ra danh sách có đề tài số câu hỏi khảo sát trên 100
-        public void XuatDSDeTaiKinhTeTren100CauHoi()
-        {
-            bool check = false;
-            try
-            {
-                foreach (DTO_NCLT a in LstNCLT)
-                {
-                    if (a.MaDeTai == "Kinh tế" && a.SoCauHoiKhaoSat > 100)
-                    {
-                        a.Xuat(); 
-                        check = true;
-                    }
-                }
-                if (!check)
-                {
-                    throw new Exception("Không có đề tài kinh tế nào có số câu hỏi khảo sát trên 100 câu.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        //4.10 In ra danh sách có để tài nghiên cứu thời gian thực trên 4 tháng
-        public void XuatDSDeTaiTren4Thang()
-        {
-            bool check = false;
-            try
-            {
-                foreach (DTO_NCLT a in LstNCLT)
-                {
-                    TimeSpan thoiGianThucHien = a.NgayKetThuc - a.NgayBatDau;
-                    if (thoiGianThucHien.TotalDays > 120) // 4 tháng = 120 ngày
-                    {
-                        a.Xuat(); ; 
-                        check = true;
-                    }
-                }
-                if (!check)
-                {
-                    throw new Exception("Không có đề tài nào có thời gian thực hiện trên 4 tháng.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        
+             //4.8 xuất danh sách có đề tài thuộc lĩnh vực nghiên cứu lí thuyết có khả năng triển khai vào thực tế
+ public void XuatDSDeTaiLyThuyetApDungThucTe()
+ {
+     bool check = false;
+     try
+     {
+         foreach (DTO_NCLT a in LstNCLT)
+         {
+             if (a.MaDeTai.Contains("NCLT") && a.Is_thucTe)
+             {
+                 a.Xuat();   // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                 check = true;
+             }
+         }
+         if (!check)
+         {
+             throw new Exception("Không có đề tài nghiên cứu lý thuyết nào có khả năng triển khai vào thực tế.");
+         }
+     }
+     catch (Exception ex)
+     {
+         Console.WriteLine(ex.Message);
+     }
+ }
+ //4.9 in ra danh sách có đề tài số câu hỏi khảo sát trên 100
+ public void XuatDSDeTaiKinhTeTren100CauHoi()
+ {
+     bool check = false;
+     try
+     {
+         foreach (DTO_NCLT a in LstNCLT)
+         {
+             if (a.MaDeTai.Contains("Kinh tế") && a.SoCauHoiKhaoSat > 100)
+             {
+                 a.Xuat();  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                 check = true;
+             }
+         }
+         if (!check)
+         {
+             throw new Exception("Không có đề tài kinh tế nào có số câu hỏi khảo sát trên 100 câu.");
+         }
+     }
+     catch (Exception ex)
+     {
+         Console.WriteLine(ex.Message);
+     }
+ }
+ //4.10 In ra danh sách có để tài nghiên cứu thời gian thực trên 4 tháng
+ public void XuatDSDeTaiTren4Thang()
+ {
+     bool check = false; // Biến kiểm tra xem có đề tài nào được tìm thấy không
+
+     try
+     {
+         
+         foreach (DTO_NCLT a in LstNCLT)
+         {
+
+             DateTime ngayBatDau = DateTime.ParseExact(a.NgayBatDau, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+             DateTime ngayKetThuc = DateTime.ParseExact(a.NgayKetThuc, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+             TimeSpan thoiGianThucHien = ngayKetThuc - ngayBatDau;
+
+
+             if (thoiGianThucHien.TotalDays > 120) // 4 tháng = 120 ngày
+             {
+                 a.Xuat();
+                 check = true;
+             }
+         }
+         if (!check)
+         {
+
+             throw new Exception("Không có đề tài nào có thời gian thực hiện trên 4 tháng.");
+         }
+     }
+     catch (Exception ex)
+     {
+         Console.WriteLine(ex.Message);
+     }
+ }
+
+        
 
 >>>>>>> 3d3e23658a4ea2dbebf091a82131f4e102898645
     }

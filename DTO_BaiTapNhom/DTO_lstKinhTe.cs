@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,7 +90,7 @@ namespace DTO_BaiTapNhom
             {
                 foreach (DTO_KinhTe a in LstKinhTe)
                 {
-                    if (a.MaDeTai == "Lý thuyết" && a.Is_thucTe)
+                    if (a.MaDeTai.Contains("NCLT") && a.Is_thucTe)
                     {
                         a.Xuat();   // Hàm xuất đã có sẵn, chỉ cần gọi lại.
                         check = true;
@@ -112,8 +113,8 @@ namespace DTO_BaiTapNhom
             try
             {
                 foreach (DTO_KinhTe a in LstKinhTe)
-                    {
-                    if (a.MaDeTai == "Kinh tế" && a.SoCauHoiKhaoSat > 100)
+                {
+                    if (a.MaDeTai.Contains("Kinh tế") && a.SoCauHoiKhaoSat > 100)
                     {
                         a.Xuat();  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
                         check = true;
@@ -132,20 +133,30 @@ namespace DTO_BaiTapNhom
         //4.10 In ra danh sách có để tài nghiên cứu thời gian thực trên 4 tháng
         public void XuatDSDeTaiTren4Thang()
         {
-            bool check = false;
+            bool check = false; // Biến kiểm tra xem có đề tài nào được tìm thấy không
+
             try
             {
+
                 foreach (DTO_KinhTe a in LstKinhTe)
                 {
-                    TimeSpan thoiGianThucHien = a.NgayKetThuc - a.NgayBatDau;
+
+                    DateTime ngayBatDau = DateTime.ParseExact(a.NgayBatDau, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime ngayKetThuc = DateTime.ParseExact(a.NgayKetThuc, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+                    TimeSpan thoiGianThucHien = ngayKetThuc - ngayBatDau;
+
+
                     if (thoiGianThucHien.TotalDays > 120) // 4 tháng = 120 ngày
                     {
-                        a.Xuat(); ;  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                        a.Xuat();
                         check = true;
                     }
                 }
                 if (!check)
                 {
+
                     throw new Exception("Không có đề tài nào có thời gian thực hiện trên 4 tháng.");
                 }
             }
@@ -154,6 +165,9 @@ namespace DTO_BaiTapNhom
                 Console.WriteLine(ex.Message);
             }
         }
+
+
+
 
     }
 }
