@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO_BaiTapNhom;
 using DAL_BaiTapNhom;
+using System.Runtime.Remoting.Messaging;
 
 namespace BLL_BaiTapNhom
 {
@@ -25,6 +26,13 @@ namespace BLL_BaiTapNhom
         {
             return dALBaiTap.readFile("");  
         }
+
+        public double TinhChiPhi(DTO_cDeTai Detai)
+        {
+            return Detai.TinhKinhPhi();
+        }
+
+        
         #endregion Methods
         //4.2
         //public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai)
