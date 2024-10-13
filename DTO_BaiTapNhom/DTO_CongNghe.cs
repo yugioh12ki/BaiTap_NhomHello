@@ -18,11 +18,6 @@ namespace DTO_BaiTapNhom
                 else throw new ArgumentException("Môi Trường phải là web, mobile, window");            
             } 
         }
-
-        public bool Is_thucTe { get; internal set; }
-        public int SoCauHoiKhaoSat { get; internal set; }
-
-
         #endregion ThuocTinh
         #region method
 
