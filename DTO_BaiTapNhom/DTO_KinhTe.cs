@@ -13,6 +13,8 @@ namespace DTO_BaiTapNhom
         private int soCauHoi;
 
         public int SoCauHoi { get => soCauHoi; set => soCauHoi = value; }
+        public bool Is_thucTe { get; internal set; }
+        public int SoCauHoiKhaoSat { get; internal set; }
 
         #endregion ThuocTinh
         #region method

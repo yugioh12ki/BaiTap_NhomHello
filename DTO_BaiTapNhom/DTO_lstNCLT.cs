@@ -86,9 +86,9 @@ namespace DTO_BaiTapNhom
             {
                 foreach (DTO_NCLT a in LstNCLT)
                 {
-                    if (a.MaDeTai == "Lý thuyết" && a.thucTe)
+                    if (a.MaDeTai == "Lý thuyết" && a.Is_thucTe)
                     {
-                        a.Xuat();   // Hàm xuất đã có sẵn, chỉ cần gọi lại.
+                        a.Xuat();   
                         check = true;
                     }
                 }

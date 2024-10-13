@@ -19,6 +19,9 @@ namespace DTO_BaiTapNhom
             } 
         }
 
+        public bool Is_thucTe { get; internal set; }
+        public int SoCauHoiKhaoSat { get; internal set; }
+
 
         #endregion ThuocTinh
         #region method
