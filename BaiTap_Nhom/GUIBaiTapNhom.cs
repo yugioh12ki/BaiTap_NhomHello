@@ -142,7 +142,7 @@ namespace BaiTap_Nhom
         {
             Console.WriteLine("Tìm Kiếm Theo Tiêu Chí: ");
             string keyword = Console.ReadLine();
-            var searchResult = _BLLBaiTapNhom.TimDeTai()
+            var searchResult = _BLLBaiTapNhom.TimDeTai();
         }
 
         public void showUI()

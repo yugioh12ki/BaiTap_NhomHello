@@ -10,10 +10,8 @@ namespace DTO_BaiTapNhom
     {
         #region thuocTinh
         private bool is_thucTe;
-
-
         public bool Is_thucTe { get => is_thucTe; set => is_thucTe = value; }
-        public int SoCauHoiKhaoSat { get; internal set; }
+        
 
         #endregion thuocTinh
         #region method

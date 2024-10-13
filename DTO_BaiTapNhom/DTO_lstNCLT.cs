@@ -105,30 +105,7 @@ namespace DTO_BaiTapNhom
                 Console.WriteLine(ex.Message);
             }
         }
-        //4.9 in ra danh sách có đề tài số câu hỏi khảo sát trên 100
-        public void XuatDSDeTaiKinhTeTren100CauHoi()
-        {
-            bool check = false;
-            try
-            {
-                foreach (DTO_NCLT a in LstNCLT)
-                {
-                    if (a.MaDeTai.Contains("Kinh tế") && a.SoCauHoiKhaoSat > 100)
-                    {
-                        a.Xuat();  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
-                        check = true;
-                    }
-                }
-                if (!check)
-                {
-                    throw new Exception("Không có đề tài kinh tế nào có số câu hỏi khảo sát trên 100 câu.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        
         //4.10 In ra danh sách có để tài nghiên cứu thời gian thực trên 4 tháng
         public void XuatDSDeTaiTren4Thang()
         {
