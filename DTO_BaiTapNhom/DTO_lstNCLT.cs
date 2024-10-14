@@ -89,7 +89,7 @@ namespace DTO_BaiTapNhom
             {
                 foreach (DTO_NCLT a in LstNCLT)
                 {
-                    if (a.MaDeTai.Contains("NCLT") && a.Is_thucTe)
+                    if (a.Is_thucTe)
                     {
                         a.Xuat();   // Hàm xuất đã có sẵn, chỉ cần gọi lại.
                         check = true;
