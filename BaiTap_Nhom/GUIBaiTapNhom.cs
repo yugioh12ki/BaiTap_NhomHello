@@ -80,6 +80,26 @@ namespace BaiTap_Nhom
             Console.WriteLine("==========================================================================");
         }
 
+        public void TimKiemTheoTieuChi()
+        {
+            Console.WriteLine("Tìm Kiếm Theo Tiêu Chí: ");
+            string keyword = Console.ReadLine();
+            XuatDeTaiTheoTieuChi(keyword);
+        }
+
+
+        public void XuatDeTaiTheoTieuChi(string key)
+        {
+            Console.WriteLine($"============== Danh Sách Các Đề Tài Theo Tìm Kiếm {key} ==================");
+            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            lstNCLT.TimKiemDSTieuChi(key);
+            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            lstKinhTe.TimKiemDSTieuChi(key);
+            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            lstCongNghe.TimKiemDSTieuChi(key);
+            Console.WriteLine("==========================================================================");
+        }
+
         public void CapNhatThemKinhPhi()
         {
             lstNCLT.CapNhapKinhPhi();
@@ -138,19 +158,38 @@ namespace BaiTap_Nhom
             Console.WriteLine("*************************************************************************");
         }
 
-        public void TimKiemTheoTieuChi()
-        {
-            Console.WriteLine("Tìm Kiếm Theo Tiêu Chí: ");
-            string keyword = Console.ReadLine();
-            
-        }
-
-        public void showUI()
-        {
-            int menu;
-        }
-
         
+
+        public void showUI(int menu)
+        {
+            switch(menu)
+            {
+                case 0:
+                    Environment.Exit(0);
+                    break;
+                case 1:
+                    //Menu Thêm DS từ File khác
+                    break;
+                case 2:
+                    XuatTatCaDeTai();
+                    break;
+                case 3:
+                    Console.WriteLine("Nhập Từ Khóa Để Tìm Kiếm Đề Tài");
+                    string key = Console.ReadLine();
+                    XuatDeTaiTheoTieuChi(key);
+                    break;
+                case 4:
+                    XuatTatCaDeTaiCoGiangVien();
+                    break;
+                case 5:
+                    CapNhatThemKinhPhi();
+                    break;
+                case 6:
+                    break;
+            }    
+        }
+
+
     }
   
 }

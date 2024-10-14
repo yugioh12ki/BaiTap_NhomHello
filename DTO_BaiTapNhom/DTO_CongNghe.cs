@@ -52,7 +52,8 @@ namespace DTO_BaiTapNhom
 
         public override void Xuat()
         {
-            Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, Moi truong: {MoiTruong}");
+            Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}," +
+                $" Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, Moi truong: {MoiTruong}");
         }
 
         public void nhapCN()
