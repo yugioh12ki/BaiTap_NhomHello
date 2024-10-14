@@ -91,7 +91,7 @@ namespace DTO_BaiTapNhom
             {
                 foreach (DTO_KinhTe a in LstKinhTe)
                 {
-                    if (a.MaDeTai.Contains("Kinh tế") && a.SoCauHoi > 100)
+                    if (a.SoCauHoi > 100)
                     {
                         a.Xuat();  // Hàm xuất đã có sẵn, chỉ cần gọi lại.
                         check = true;
