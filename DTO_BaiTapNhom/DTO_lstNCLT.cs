@@ -31,7 +31,10 @@ namespace DTO_BaiTapNhom
 
         public void XuatDSNCLT()
         {
-            
+            foreach (DTO_NCLT a in LstNCLT)
+            {
+                a.Xuat();
+            }
         }
 
 

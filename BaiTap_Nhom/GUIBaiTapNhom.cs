@@ -102,14 +102,14 @@ namespace BaiTap_Nhom
         public void XuatDTaiNCLT_ThucTe()
         {
             Console.WriteLine("========= Danh Sách Các Đề Tài Nghiên Cứu Lý Thuyết Có Thực Tế ===========");
-            lstNCLT.XuatDSNCLT();
+            lstNCLT.XuatDSDeTaiLyThuyetApDungThucTe();
             Console.WriteLine("==========================================================================");
         }
 
         public void XuatDTaiKinhTe_LonHon100Cau()
         {
             Console.WriteLine("============== Danh Sách Các Đề Tài Kinh Tế Lớn Hơn 100 Câu ==============");
-            lstKinhTe.XuatDSKinhTe();
+            lstKinhTe.XuatDSDeTaiKinhTeTren100CauHoi();
             Console.WriteLine("==========================================================================");
         }
 
@@ -142,7 +142,7 @@ namespace BaiTap_Nhom
         {
             Console.WriteLine("Tìm Kiếm Theo Tiêu Chí: ");
             string keyword = Console.ReadLine();
-            var searchResult = _BLLBaiTapNhom.TimDeTai();
+            
         }
 
         public void showUI()
