@@ -40,18 +40,18 @@ namespace DTO_BaiTapNhom
 
         public void nhapNCLT()
         {
-            string check = "Y";
+            string check;
             base.Nhap();
             do {
                 Console.WriteLine("Xác nhận có thực tế nghiên cứu lý thyết không (Y/N): ");
                 check = Console.ReadLine();
-            } while(check != "Y" || check != "N");
+            } while(check != "Y" && check != "N");
             if (check == "Y")
             {
                 is_thucTe = true;
             }
             else is_thucTe = false;
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override void Xuat()

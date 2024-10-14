@@ -55,7 +55,7 @@ namespace DTO_BaiTapNhom
             base.Nhap();
             Console.WriteLine("Nhập số lượng câu hỏi của Đề Tài Kinh Tế: ");
             soCauHoi = Int32.Parse(Console.ReadLine());
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 

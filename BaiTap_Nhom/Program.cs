@@ -12,7 +12,13 @@ namespace BaiTap_NhomHello
         static void Main(string[] args)
         {
             GUIBaiTapNhom UI = new GUIBaiTapNhom();
-
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+            UI.showThongTinNhom();
+            do
+            {
+                UI.showUI();
+            } while (true);
         }
     }
 }

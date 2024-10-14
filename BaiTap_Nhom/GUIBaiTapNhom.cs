@@ -11,12 +11,14 @@ namespace BaiTap_Nhom
 {
     public class GUIBaiTapNhom
     {
+        
         private BLLBaiTapNhom _BLLBaiTapNhom;
         DTO_lstNCLT lstNCLT = new DTO_lstNCLT();
         DTO_lstKinhTe lstKinhTe = new DTO_lstKinhTe();
         DTO_lstCongNghe lstCongNghe = new DTO_lstCongNghe();
         int soLuong = 0;
         int loai = 0;
+        
 
         public GUIBaiTapNhom()
         {
@@ -157,20 +159,34 @@ namespace BaiTap_Nhom
             Console.WriteLine("2033230081 - Nguyễn Thị Ngọc Hiểu");
             Console.WriteLine("*************************************************************************");
         }
-
         
-
-        public void showUI(int menu)
+        public void showMenu()
         {
-            switch(menu)
+            Console.WriteLine("\t0. Thoát Chương Trình !!!");
+            Console.WriteLine("\t1. Thêm Loại Đề Tài (Xml hoặc bàn phím) ");
+            Console.WriteLine("\t2. Xuất danh sách các đề tài"); 
+            Console.WriteLine("\t3. Tìm kiếm đề tài khi biết tên đề tài / mã số / tên người hướng dẫn / tên người chủ trì."); 
+            Console.WriteLine("\t4. Xuất danh sách các đề tài khi biết tên giảng viên hướng dẫn"); 
+            Console.WriteLine("\t5. Cập nhật kinh phí thực hiện của các đề tài tăng lên 10 %");
+            Console.WriteLine("\t6. Xuất danh sách các đề tài có kinh phí trên 10 triệu");
+            Console.WriteLine("\t7. Xuất danh sách các đề tài thuộc lĩnh vực nghiên cứu lý thuyết và có khả năng triển khai vào thực tế.");
+            Console.WriteLine("\t8. In ra danh sách đề tài có số câu hỏi khảo sát trên 100 câu."); 
+            Console.WriteLine("\t9. In ra danh sách đề tài có thời gian thực hiện trên 4 tháng."); 
+        }
+
+        public void showUI()
+        {
+            showMenu();
+            Console.WriteLine("Nhập Menu (1->9): ");
+            int menu = Int32.Parse(Console.ReadLine());
+            switch (menu)
             {
                 case 0:
+                    Console.WriteLine("\n\n\t\t\t Chương Trình Kết Thúc --- Nhóm Hello");
                     Environment.Exit(0);
                     break;
                 case 1:
-                    Console.WriteLine("Nhập Bàn Phím Từ (0 -> 2)");
-                    int menuThem = Int32.Parse(Console.ReadLine());
-                    UI_ThemDeTai(menuThem);
+                    UI_ThemDeTai();
                     //Menu Thêm DS từ File khác
                     break;
                 case 2:
@@ -197,18 +213,22 @@ namespace BaiTap_Nhom
                     XuatDTaiKinhTe_LonHon100Cau();
                     break;
                 case 9:
-                    XuatDTaiKinhTe_LonHon100Cau();
                     break;
             }    
         }
 
-        public void UI_ThemDeTai(int menu)
+        public void UI_ThemDeTai()
         {
-            switch (menu)
+            int menuThem;
+            do
             {
-                case 0:
-                    
-                  break;
+                Console.WriteLine("Nhập Bàn Phím Từ (1. Thêm Đề Tài ở File Xml; 2. Thêm Đề Tài Nhập Bài Phím)");
+                menuThem = Int32.Parse(Console.ReadLine());
+            } while (menuThem > 3 && menuThem < 0);
+            
+            switch (menuThem)
+            {
+                
                 case 1:
                     //Nhập DS ở Phía Xml
                   break;
