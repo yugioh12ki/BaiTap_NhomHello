@@ -37,6 +37,20 @@ namespace DTO_BaiTapNhom
             }
         }
 
+        // 4.4 Xuất Danh Sách Tìm Các Tiêu Chí => Tên Đề Tài,Mã Số, GVHD, Tên Chủ Trì
+
+        public void TimKiemDSTieuChi(string key)
+        {
+            foreach (var kinhte in lstKinhTe)
+            {
+                if (kinhte.MaDeTai.ToLower().Contains(key.ToLower()) || kinhte.TenDeTai.ToLower().Contains(key.ToLower())
+                    || kinhte.HoTenGV.ToLower().Contains(key.ToLower()) || kinhte.TruongNhom.Contains(key.ToLower()))
+                {
+                    kinhte.Xuat();
+                }
+            }
+        }
+
         // 4.7 Xuất danh sách đề tài của kinh tế mà kinh phí trên 10 triệu 
         public void XuatDSDeTaiTren10TR()
         {

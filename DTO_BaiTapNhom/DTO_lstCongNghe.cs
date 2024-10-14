@@ -38,6 +38,20 @@ namespace DTO_BaiTapNhom
             }
         }
 
+        // 4.4 Xuất Danh Sách Tìm Các Tiêu Chí => Tên Đề Tài,Mã Số, GVHD, Tên Chủ Trì
+
+        public void TimKiemDSTieuChi(string key)
+        {
+            foreach (var congnghe in lstCongNghe)
+            {
+                if (congnghe.MaDeTai.ToLower().Contains(key.ToLower()) || congnghe.TenDeTai.ToLower().Contains(key.ToLower())
+                    || congnghe.HoTenGV.ToLower().Contains(key.ToLower()) || congnghe.TruongNhom.Contains(key.ToLower()))
+                {
+                    congnghe.Xuat();
+                }
+            }
+        }
+
         // 4.7 Xuất danh sách đề tài của Công nghệ mà kinh phí trên 10 triệu 
         public void XuatDSDeTaiTren10TR()
         {

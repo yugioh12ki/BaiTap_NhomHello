@@ -37,6 +37,20 @@ namespace DTO_BaiTapNhom
             }
         }
 
+        // 4.4 Xuất Danh Sách Tìm Các Tiêu Chí => Tên Đề Tài,Mã Số, GVHD, Tên Chủ Trì
+
+        public void TimKiemDSTieuChi(string key)
+        {
+            foreach(var nclt in lstNCLT)
+            {
+                if(nclt.MaDeTai.ToLower().Contains(key.ToLower()) || nclt.TenDeTai.ToLower().Contains(key.ToLower()) 
+                    || nclt.HoTenGV.ToLower().Contains(key.ToLower()) || nclt.TruongNhom.Contains(key.ToLower()))
+                {
+                    nclt.Xuat();
+                }    
+            }    
+        }
+
 
         // 4.7 Xuất danh sách đề tài của NCLT mà kinh phí trên 10 triệu 
         public void XuatDSDeTaiTren10TR()
