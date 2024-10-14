@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_BaiTapNhom", "DTO_BaiTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_BaiTapNhom", "BLL_BaiTapNhom\BLL_BaiTapNhom.csproj", "{A243E6B1-5C73-4BE6-A3FF-0395C49ADE65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileXml", "FileXml", "{96B40619-E9D0-402E-AD5B-F60422FF0D4E}"
+	ProjectSection(SolutionItems) = preProject
+		DSdetai.xml = DSdetai.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
