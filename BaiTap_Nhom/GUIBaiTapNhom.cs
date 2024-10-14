@@ -16,7 +16,7 @@ namespace BaiTap_Nhom
         DTO_lstKinhTe lstKinhTe = new DTO_lstKinhTe();
         DTO_lstCongNghe lstCongNghe = new DTO_lstCongNghe();
         int soLuong = 0;
-        
+        int loai = 0;
 
         public GUIBaiTapNhom()
         {
@@ -32,7 +32,7 @@ namespace BaiTap_Nhom
                     do
                     {
                         Console.WriteLine("Nhập Số Lượng Đề Tài Nghiên Cứu Lý Thuyết cần nhập:\n ");
-                        soLuong = Int32.Parse(Console.ReadLine());
+                        check = Int32.TryParse(Console.ReadLine(),out soLuong);
                     } while (!check || soLuong < 0);
                     lstNCLT.NhapDSNCLT(soLuong);
                     break;
@@ -40,7 +40,7 @@ namespace BaiTap_Nhom
                     do
                     {
                         Console.WriteLine("Nhập Số Lượng Đề Tài Kinh Tế cần nhập:\n ");
-                        soLuong = Int32.Parse(Console.ReadLine());
+                        check = Int32.TryParse(Console.ReadLine(), out soLuong);
                     } while (!check || soLuong < 0);
                     
                     lstKinhTe.NhapDSKinhTe(soLuong);
@@ -49,7 +49,7 @@ namespace BaiTap_Nhom
                     do
                     {
                         Console.WriteLine("Nhập Số Lượng Đề Tài Nghiên Cứu Lý Thuyết cần nhập:\n ");
-                        soLuong = Int32.Parse(Console.ReadLine());
+                        check = Int32.TryParse(Console.ReadLine(), out soLuong);
                     } while (!check || soLuong < 0);
                     lstKinhTe.NhapDSKinhTe(soLuong);
                     break;
@@ -168,6 +168,9 @@ namespace BaiTap_Nhom
                     Environment.Exit(0);
                     break;
                 case 1:
+                    Console.WriteLine("Nhập Bàn Phím Từ (0 -> 2)");
+                    int menuThem = Int32.Parse(Console.ReadLine());
+                    UI_ThemDeTai(menuThem);
                     //Menu Thêm DS từ File khác
                     break;
                 case 2:
@@ -185,10 +188,41 @@ namespace BaiTap_Nhom
                     CapNhatThemKinhPhi();
                     break;
                 case 6:
+                    XuatTatCaDeTaiTren10Trieu();
+                    break;
+                case 7:
+                    XuatDTaiNCLT_ThucTe();
+                    break;
+                case 8:
+                    XuatDTaiKinhTe_LonHon100Cau();
+                    break;
+                case 9:
+                    XuatDTaiKinhTe_LonHon100Cau();
                     break;
             }    
         }
 
+        public void UI_ThemDeTai(int menu)
+        {
+            switch (menu)
+            {
+                case 0:
+                    
+                  break;
+                case 1:
+                    //Nhập DS ở Phía Xml
+                  break;
+                case 2:
+                    do
+                    {
+                        Console.WriteLine("\t Đề Tài Loại (1. Nghiên Cứu Lý Thuyết | 2. Kinh Tế | 3. Công Nghệ): ");
+                        loai = Int32.Parse(Console.ReadLine());
+                    } while (loai >= 3 && loai < 0);   
+                    NhapThongTinDeTai(loai);
+                  break;
+                    
+            }
+        }
 
     }
   
