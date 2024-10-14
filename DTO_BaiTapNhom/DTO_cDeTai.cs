@@ -63,9 +63,9 @@ namespace DTO_BaiTapNhom
             truongNhom = Console.ReadLine();
             Console.WriteLine("Nhập giảng viên hướng dẫn cho đề tài:");
             hoTenGV = Console.ReadLine();
-            Console.WriteLine("Nhập ngày bắt đầu đề tài:");
+            Console.WriteLine("Nhập ngày bắt đầu đề tài (dd/mm/yyyy):");
             ngayBatDau = Console.ReadLine();
-            Console.WriteLine("Nhập ngày kết thúc đề tài:");
+            Console.WriteLine("Nhập ngày kết thúc đề tài (dd/mm/yyyy) :");
             ngayKetThuc = Console.ReadLine();
         }
 
