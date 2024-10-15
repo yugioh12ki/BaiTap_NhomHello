@@ -35,6 +35,12 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
+        public void CapNhatKinhPhi()
+        {
+            KinhPhi = TinhKinhPhi();
+            KinhPhi += (KinhPhi * 0.1);
+        }
+
         public int ITinhHoTro()
         {
             if (soCauHoi > 100)
@@ -48,16 +54,16 @@ namespace DTO_BaiTapNhom
         {
             string xuat = $"   {MaDeTai}";
             if (TenDeTai.Length < 20)
-                xuat = xuat + $"\t{TenDeTai}\t\t{TinhKinhPhi()}";
+                xuat = xuat + $"\t{TenDeTai}\t\t{KinhPhi}";
             else
-                xuat = xuat + $"\t{TenDeTai}\t{TinhKinhPhi()}";
+                xuat = xuat + $"\t{TenDeTai}\t{KinhPhi}";
             if (TruongNhom.Length < 20 && HoTenGV.Length < 20)
                 xuat = xuat + $"\t{TruongNhom}\t{HoTenGV}";
             else if (TruongNhom.Length > 20 && HoTenGV.Length > 20)
                 xuat = xuat + $"  {TruongNhom}  {HoTenGV}";
             else
                 xuat = xuat + $"  {TruongNhom}\t{HoTenGV}";
-            xuat = xuat + $"\t{NgayBatDau}\t{NgayKetThuc}\t   {ITinhHoTro()}     \t\t  {soCauHoi}";
+            xuat = xuat + $"\t{NgayBatDau}\t{NgayKetThuc}\t   {ITinhHoTro()}  \t\t  {soCauHoi}";
             Console.WriteLine(xuat);
             //Console.WriteLine($"   {MaDeTai}\t{TenDeTai}\t\t{KinhPhi}\t{TruongNhom}\t{HoTenGV}" +
             //    $"\t {NgayBatDau}\t {NgayKetThuc}\t {SoCauHoi}\t {TinhKinhPhi()}\t {ITinhHoTro()}");
