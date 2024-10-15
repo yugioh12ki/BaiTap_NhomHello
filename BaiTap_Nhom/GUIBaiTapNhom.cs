@@ -18,7 +18,7 @@ namespace BaiTap_Nhom
         DTO_lstCongNghe lstCongNghe = new DTO_lstCongNghe();
         int soLuong = 0;
         int loai = 0;
-        string path = "E:\\Học tập\\.NET\\LTHDT\\BaiTap_Nhom\\";
+        string path = "E:\\Học tập\\.NET\\LTHDT\\BaiTap_Nhom\\File_Xml\\";
         string tieuDe = "  Mã Đề Tài \t   Tên Đề Tài  \t   Kinh Phí \t Trưởng Nhóm \t Giảng Viên \t Ngày Bắt Đầu \t Ngày Kết Thúc";
 
 

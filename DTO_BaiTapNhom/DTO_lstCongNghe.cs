@@ -74,7 +74,7 @@ namespace DTO_BaiTapNhom
             {
                 foreach (DTO_CongNghe a in LstCongNghe)
                 {
-                    if (a.HoTenGV != null)
+                    if (a.HoTenGV != "")
                     {
                         a.Xuat();
                         check = true;
