@@ -15,7 +15,7 @@ namespace DTO_BaiTapNhom
 
         public DTO_lstNCLT()
         {
-
+            lstNCLT = new List<DTO_NCLT>();
         }
 
         public void NhapDSNCLT(int count)

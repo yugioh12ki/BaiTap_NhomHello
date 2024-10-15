@@ -12,12 +12,14 @@ namespace DTO_BaiTapNhom
     {
         private List<DTO_CongNghe> lstCongNghe = new List<DTO_CongNghe>();
 
-        public List<DTO_CongNghe> LstCongNghe { get => lstCongNghe; set => lstCongNghe = value; }
-
         public DTO_lstCongNghe()
         {
-
+            lstCongNghe = new List<DTO_CongNghe>();
         }
+
+        public List<DTO_CongNghe> LstCongNghe { get => lstCongNghe; set => lstCongNghe = value; }
+
+        
 
         public void NhapDSCongNghe(int count)
         {

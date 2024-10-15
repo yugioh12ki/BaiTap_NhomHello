@@ -10,9 +10,12 @@ namespace DAL_BaiTapNhom
 {
     public class DALBaiTapNhom
     {
-        List<DTO_NCLT> _listDetai = new List<DTO_NCLT>();
-        public List<DTO_NCLT> ListDetai { get => _listDetai; set => _listDetai = value; }
-        public List<DTO_NCLT> readFile(string filename)
+        DTO_lstNCLT lstNCLT = new DTO_lstNCLT();
+        DTO_lstKinhTe lstKinhTe = new DTO_lstKinhTe();
+        DTO_lstCongNghe lstCongnghe = new DTO_lstCongNghe(); 
+
+
+        public void readFile(string filename)
         {
             Console.InputEncoding = UnicodeEncoding.Unicode;
             try
@@ -26,22 +29,54 @@ namespace DAL_BaiTapNhom
                      * 
                      */
                     //DTO_cDeTai st = new DTO_cDetai();
-                    DTO_NCLT st = new DTO_NCLT();
-                    st.MaDeTai = i["Madetai"].InnerText;
-                    st.TenDeTai = i["Tendetai"].InnerText;
-                    st.KinhPhi = double.Parse(i["Kinhphi"].InnerText);
-                    st.TruongNhom = i["Truongnhom"].InnerText;
-                    st.NgayBatDau = i["Thoigianbatdau"].InnerText;
-                    st.NgayKetThuc = i["Thoigianketthuc"].InnerText;
-                    st.HoTenGV = i["HotenGVHD"].InnerText;
-                    ListDetai.Add(st);
+                    XmlNode is_ThucTe = i["ThucTe"];
+                    XmlNode is_soCauHoi = i["soCauHoi"];
+                    XmlNode is_moiTruong = i["ThucTe"];
+                    if(is_ThucTe != null)
+                    {
+                        DTO_NCLT st = new DTO_NCLT();
+                        st.MaDeTai = i["Madetai"].InnerText;
+                        st.TenDeTai = i["Tendetai"].InnerText;
+                        st.KinhPhi = double.Parse(i["Kinhphi"].InnerText);
+                        st.TruongNhom = i["Truongnhom"].InnerText;
+                        st.NgayBatDau = i["Thoigianbatdau"].InnerText;
+                        st.NgayKetThuc = i["Thoigianketthuc"].InnerText;
+                        st.HoTenGV = i["HotenGVHD"].InnerText;
+                        st.Is_thucTe = Boolean.Parse(i["ThucTe"].InnerText);
+                        lstNCLT.LstNCLT.AddRange(st);
+                    }  
+                    else if (is_soCauHoi != null)
+                    {
+                        DTO_KinhTe st = new DTO_KinhTe();
+                        st.MaDeTai = i["Madetai"].InnerText;
+                        st.TenDeTai = i["Tendetai"].InnerText;
+                        st.KinhPhi = double.Parse(i["Kinhphi"].InnerText);
+                        st.TruongNhom = i["Truongnhom"].InnerText;
+                        st.NgayBatDau = i["Thoigianbatdau"].InnerText;
+                        st.NgayKetThuc = i["Thoigianketthuc"].InnerText;
+                        st.HoTenGV = i["HotenGVHD"].InnerText;
+                        st.SoCauHoi = Int32.Parse(i["SoCauHoi"].InnerText);
+                        lstKinhTe.LstKinhTe.Add(st);
+                    }
+                    else if (is_moiTruong != null)
+                    {
+                        DTO_CongNghe st = new DTO_CongNghe();
+                        st.MaDeTai = i["Madetai"].InnerText;
+                        st.TenDeTai = i["Tendetai"].InnerText;
+                        st.KinhPhi = double.Parse(i["Kinhphi"].InnerText);
+                        st.TruongNhom = i["Truongnhom"].InnerText;
+                        st.NgayBatDau = i["Thoigianbatdau"].InnerText;
+                        st.NgayKetThuc = i["Thoigianketthuc"].InnerText;
+                        st.HoTenGV = i["HotenGVHD"].InnerText;
+                        st.MoiTruong = i["Moitruong"].InnerText;
+                        lstCongnghe.LstCongNghe.Add(st);
+                    }
+                    
                 }
-                return ListDetai;
             }
             catch (Exception e)
             {
                 Console.WriteLine("Loi doc File: " + e.Message);
-                return null;
             }
         }
     }

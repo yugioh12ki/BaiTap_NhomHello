@@ -22,9 +22,14 @@ namespace BLL_BaiTapNhom
         {
         }
 
-        public List<DTO_NCLT> getlistDeTai()
+        //public List<DTO_NCLT> getlistDeTai()
+        //{
+        //    return dALBaiTap.readFile("");  
+        //}
+
+        public void docFileXml()
         {
-            return dALBaiTap.readFile("");  
+            dALBaiTap.readFile("../../../DSdetai.xml"); //Chỗ này đọc file
         }
 
         public double TinhChiPhi(DTO_cDeTai Detai)

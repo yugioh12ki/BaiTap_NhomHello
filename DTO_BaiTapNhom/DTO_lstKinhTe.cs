@@ -15,7 +15,7 @@ namespace DTO_BaiTapNhom
 
         public DTO_lstKinhTe()
         {
-
+            lstKinhTe = new List<DTO_KinhTe>();
         }
 
         public void NhapDSKinhTe(int count)

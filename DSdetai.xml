@@ -8,6 +8,7 @@
     <Thoigianbatdau>15/10/2024</Thoigianbatdau>
     <Thoigianketthuc>30/10/2024</Thoigianketthuc>
     <HotenGVHD>Tran Dac Tot</HotenGVHD>
+    <ThucTe>True</ThucTe>
   </Detai>
   <Detai>
     <Madetai>20331</Madetai>
@@ -17,6 +18,7 @@
     <Thoigianbatdau>15/11/2024</Thoigianbatdau>
     <Thoigianketthuc>1/12/2024</Thoigianketthuc>
     <HotenGVHD>Duong Van Duong</HotenGVHD>
+    <SoCauHoi>120</SoCauHoi>
   </Detai>
   <Detai>
     <Madetai>20332</Madetai>
@@ -26,5 +28,6 @@
     <Thoigianbatdau>20/10/2024</Thoigianbatdau>
     <Thoigianketthuc>16/12/2024</Thoigianketthuc>
     <HotenGVHD>Nguyen The Kiet</HotenGVHD>
+    <Moitruong>mobile</Moitruong>
   </Detai>
 </Danhsachdetai>

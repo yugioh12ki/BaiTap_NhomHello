@@ -231,6 +231,7 @@ namespace BaiTap_Nhom
                 
                 case 1:
                     //Nhập DS ở Phía Xml
+                    _BLLBaiTapNhom.docFileXml();
                   break;
                 case 2:
                     do
