@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,15 +25,30 @@ namespace DTO_BaiTapNhom
         public string TenDeTai { get => tenDeTai; set => tenDeTai = value; }
         public double KinhPhi { get => kinhPhi; set => kinhPhi = value; }
         public string TruongNhom { get => truongNhom; set => truongNhom = value; }
-        public string NgayBatDau { get => ngayBatDau; set => ngayBatDau = value; }
-        public string NgayKetThuc { get => ngayKetThuc; set => ngayKetThuc = value; }
+        public string NgayBatDau
+        {
+            get => ngayBatDau;
+            set => ngayBatDau = value;
+        }
+
+        public string NgayKetThuc
+        {
+            get => ngayKetThuc;
+            set => ngayKetThuc = value;
+        }
+
         public string HoTenGV { get => hoTenGV; set => hoTenGV = value; }
+
+
+
 
 
 
         #endregion ThuocTinh
 
         #region method
+
+
 
         public DTO_cDeTai()
         {
@@ -59,13 +75,13 @@ namespace DTO_BaiTapNhom
             maDeTai = Console.ReadLine();
             Console.WriteLine("Nhập tên đề tài: ");
             tenDeTai = Console.ReadLine();
-            Console.WriteLine("Nhập tên trưởng nhóm đề tài");
+            Console.WriteLine("Nhập tên trưởng nhóm đề tài: ");
             truongNhom = Console.ReadLine();
             Console.WriteLine("Nhập giảng viên hướng dẫn cho đề tài:");
             hoTenGV = Console.ReadLine();
             Console.WriteLine("Nhập ngày bắt đầu đề tài (dd/mm/yyyy):");
             ngayBatDau = Console.ReadLine();
-            Console.WriteLine("Nhập ngày kết thúc đề tài (dd/mm/yyyy) :");
+            Console.WriteLine("Nhập ngày kết thúc đề tài (dd/mm/yyyy):");
             ngayKetThuc = Console.ReadLine();
         }
 

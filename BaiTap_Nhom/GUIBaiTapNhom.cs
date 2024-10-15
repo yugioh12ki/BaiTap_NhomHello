@@ -147,6 +147,17 @@ namespace BaiTap_Nhom
             lstNCLT.CapNhapKinhPhi();
             lstKinhTe.CapNhapKinhPhi();
             lstCongNghe.CapNhapKinhPhi();
+            Console.WriteLine("========================================== Danh Sách Các Đề Tài ======================================");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
+            lstNCLT.XuatDSNCLT();
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
+            lstKinhTe.XuatDSKinhTe();
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
+            lstCongNghe.XuatDSCongNghe();
+            Console.WriteLine("=======================================================================================================");
         }
 
         public void XuatTatCaDeTaiCoGiangVien()

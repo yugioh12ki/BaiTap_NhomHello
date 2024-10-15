@@ -35,7 +35,12 @@ namespace DTO_BaiTapNhom
         {
             if (is_thucTe) return KinhPhi = 15000000;
             else return KinhPhi = 8000000;
+            
             throw new NotImplementedException();
+        }
+        public double CapNhatKinhPhi()
+        {
+            return KinhPhi += (KinhPhi * 0.1);
         }
 
         public void nhapNCLT()
@@ -51,6 +56,7 @@ namespace DTO_BaiTapNhom
                 is_thucTe = true;
             }
             else is_thucTe = false;
+            TinhKinhPhi();
             //throw new NotImplementedException();
         }
 
@@ -58,9 +64,9 @@ namespace DTO_BaiTapNhom
         {
             string xuat = $"   {MaDeTai}";
             if(TenDeTai.Length < 20 )
-                xuat = xuat + $"\t{TenDeTai}\t\t{TinhKinhPhi()}";
+                xuat = xuat + $"\t{TenDeTai}\t\t{KinhPhi}";
             else
-                xuat = xuat + $"\t{TenDeTai}\t  {TinhKinhPhi()}";
+                xuat = xuat + $"\t{TenDeTai}\t  {KinhPhi}";
             if (TruongNhom.Length < 20 && HoTenGV.Length < 20)
                 xuat = xuat + $"\t{TruongNhom}\t{HoTenGV}";
             else if (TruongNhom.Length > 20 && HoTenGV.Length > 20)

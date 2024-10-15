@@ -29,16 +29,22 @@ namespace DTO_BaiTapNhom
 
         public override double TinhKinhPhi()
         {
-            if (soCauHoi > 100) KinhPhi = 12000000;
-            else KinhPhi = 7000000;
+            if (soCauHoi > 100)
+            {
+                KinhPhi = 12000000;
+            }
+            else
+            {
+                KinhPhi = 7000000;
+            }
             return KinhPhi;
             throw new NotImplementedException();
         }
 
-        public void CapNhatKinhPhi()
+
+        public double CapNhatKinhPhi()
         {
-            KinhPhi = TinhKinhPhi();
-            KinhPhi += (KinhPhi * 0.1);
+            return KinhPhi += (KinhPhi * 0.1);
         }
 
         public int ITinhHoTro()
@@ -74,6 +80,7 @@ namespace DTO_BaiTapNhom
             base.Nhap();
             Console.WriteLine("Nhập số lượng câu hỏi của Đề Tài Kinh Tế: ");
             soCauHoi = Int32.Parse(Console.ReadLine());
+            TinhKinhPhi();
             //throw new NotImplementedException();
         }
 

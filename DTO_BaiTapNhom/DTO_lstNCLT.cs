@@ -93,7 +93,7 @@ namespace DTO_BaiTapNhom
         {
             foreach (DTO_NCLT a in LstNCLT)
             {
-                a.KinhPhi = a.KinhPhi + (a.KinhPhi * (10 / 100.0));
+                a.CapNhatKinhPhi();
             }
         }
 

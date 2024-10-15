@@ -37,9 +37,9 @@ namespace DTO_BaiTapNhom
         public override double TinhKinhPhi()
         {
             if (MoiTruong == "web" && MoiTruong == "mobile")
-                KinhPhi = 15000000;
-            else if (MoiTruong == "window")
-                KinhPhi = 10000000;
+                 KinhPhi = 15000000;
+            else if(MoiTruong == "window")
+                 KinhPhi = 10000000;
             return KinhPhi;
             throw new NotImplementedException();
         }
@@ -54,13 +54,19 @@ namespace DTO_BaiTapNhom
             throw new NotImplementedException();
         }
 
+        public double CapNhatKinhPhi()
+        {
+            return KinhPhi += (KinhPhi * 0.1);
+        }
+
         public override void Xuat()
         {
+            TinhKinhPhi();
             string xuat = $"   {MaDeTai}";
             if (TenDeTai.Length < 20)
-                xuat = xuat + $"\t{TenDeTai}\t{TinhKinhPhi()}";
+                xuat = xuat + $"\t{TenDeTai}\t{KinhPhi}";
             else
-                xuat = xuat + $"\t{TenDeTai}   {TinhKinhPhi()}";
+                xuat = xuat + $"\t{TenDeTai}   {KinhPhi}";
             if (TruongNhom.Length < 20 && HoTenGV.Length < 20)
                 xuat = xuat + $"\t{TruongNhom}\t{HoTenGV}";
             else if (TruongNhom.Length > 20 && HoTenGV.Length > 20)
@@ -76,6 +82,7 @@ namespace DTO_BaiTapNhom
             base.Nhap();
             Console.WriteLine("Nhập môi trường phát triển cho đề tài công nghệ:");
             moiTruong = Console.ReadLine();
+            TinhKinhPhi();
             throw new NotImplementedException();
         }
 
