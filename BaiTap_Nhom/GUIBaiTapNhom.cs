@@ -19,6 +19,7 @@ namespace BaiTap_Nhom
         int soLuong = 0;
         int loai = 0;
         string path = "E:\\Học tập\\.NET\\LTHDT\\BaiTap_Nhom\\";
+        string tieuDe = "  Mã Đề Tài \t   Tên Đề Tài  \t   Kinh Phí \t Trưởng Nhóm \t Giảng Viên \t Ngày Bắt Đầu \t Ngày Kết Thúc";
 
 
         public void NhapThongTinDeTai(int loai)
@@ -76,11 +77,14 @@ namespace BaiTap_Nhom
         public void XuatTatCaDeTaiTheoFile()
         {
             Console.WriteLine("======================= Danh Sách Các Đề Tài Theo Xml =============================");
-            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             ShowDeTaiNCLT();
-            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
             ShowDeTaiKinhTe();
-            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
             ShowDeTaiCongNghe();
             Console.WriteLine("==========================================================================");
         }
@@ -88,11 +92,14 @@ namespace BaiTap_Nhom
         public void XuatTatCaDeTai()
         {
             Console.WriteLine("======================= Danh Sách Các Đề Tài =============================");
-            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             lstNCLT.XuatDSNCLT();
-            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
             lstKinhTe.XuatDSKinhTe();
-            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
             lstCongNghe.XuatDSCongNghe();
             Console.WriteLine("==========================================================================");
         }
@@ -100,11 +107,14 @@ namespace BaiTap_Nhom
         public void XuatTatCaDeTaiTren10Trieu()
         {
             Console.WriteLine("=================== Danh Sách Các Đề Tài Trên 10 Triệu ===================");
-            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             lstNCLT.XuatDSDeTaiTren10TR();
-            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
             lstKinhTe.XuatDSDeTaiTren10TR();
-            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
             lstCongNghe.XuatDSDeTaiTren10TR();
             Console.WriteLine("==========================================================================");
         }
@@ -120,11 +130,14 @@ namespace BaiTap_Nhom
         public void XuatDeTaiTheoTieuChi(string key)
         {
             Console.WriteLine($"============== Danh Sách Các Đề Tài Theo Tìm Kiếm {key} ==================");
-            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             lstNCLT.TimKiemDSTieuChi(key);
-            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
             lstKinhTe.TimKiemDSTieuChi(key);
-            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
             lstCongNghe.TimKiemDSTieuChi(key);
             Console.WriteLine("==========================================================================");
         }
@@ -139,37 +152,45 @@ namespace BaiTap_Nhom
         public void XuatTatCaDeTaiCoGiangVien()
         {
             Console.WriteLine("=================== Danh Sách Các Đề Tài Có Giảng Viên ===================");
-            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             lstNCLT.XuatDSDeTaiCoGVHD();
-            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
             lstKinhTe.XuatDSDeTaiCoGVHD();
-            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
             lstCongNghe.XuatDSDeTaiCoGVHD();
             Console.WriteLine("==========================================================================");
         }
 
         public void XuatDTaiNCLT_ThucTe()
         {
-            Console.WriteLine("========= Danh Sách Các Đề Tài Nghiên Cứu Lý Thuyết Có Thực Tế ===========");
+            Console.WriteLine("========= Danh Sách Các Đề Tài Nghiên Cứu Lý Thuyết Có Thực Tế ===========\n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             lstNCLT.XuatDSDeTaiLyThuyetApDungThucTe();
-            Console.WriteLine("==========================================================================");
+            Console.WriteLine("\n==========================================================================");
         }
 
         public void XuatDTaiKinhTe_LonHon100Cau()
         {
-            Console.WriteLine("============== Danh Sách Các Đề Tài Kinh Tế Lớn Hơn 100 Câu ==============");
+            Console.WriteLine("============== Danh Sách Các Đề Tài Kinh Tế Lớn Hơn 100 Câu ==============\n");
+            Console.WriteLine(tieuDe + "Hỗ Trợ Kinh Phí" + "   Số Câu Hỏi");
             lstKinhTe.XuatDSDeTaiKinhTeTren100CauHoi();
-            Console.WriteLine("==========================================================================");
+            Console.WriteLine("\n==========================================================================");
         }
 
         public void XuatDTaiThucHien4Thang()
         {
             Console.WriteLine("=================== Danh Sách Các Đề Tài Thực Hiện Trên 4 Tháng ===================");
-            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Nghiên Cứu Lý Thuyết \n");
+            Console.WriteLine(tieuDe + "\t Kiểm Tra Thực Tế");
             lstNCLT.XuatDSDeTaiTren4Thang();
-            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Kinh Tế \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "\t Số Câu Hỏi");
             lstKinhTe.XuatDSDeTaiTren4Thang();
-            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            Console.WriteLine("\n\t\t\t\t Đề Tài Công Nghệ \n");
+            Console.WriteLine(tieuDe + "    Hỗ Trợ Kinh Phí" + "   Môi Trường");
             lstCongNghe.XuatDSDeTaiTren4Thang();
             Console.WriteLine("==========================================================================");
         }

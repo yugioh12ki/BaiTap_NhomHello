@@ -56,7 +56,21 @@ namespace DTO_BaiTapNhom
 
         public override void Xuat()
         {
-            Console.WriteLine($"ma de tai: {MaDeTai}, Ten De Tai: {TenDeTai}, Kinh phi: {KinhPhi}, Truong nhom la: {TruongNhom}, Giao Vien hướng dẫn: {HoTenGV}, Ngay bat dau:{NgayBatDau}, Ngay ket thuc: {NgayKetThuc}, Thuc te: {Is_thucTe}");
+            string xuat = $"   {MaDeTai}";
+            if(TenDeTai.Length < 20 )
+                xuat = xuat + $"\t{TenDeTai}\t\t{TinhKinhPhi()}";
+            else
+                xuat = xuat + $"\t{TenDeTai}\t  {TinhKinhPhi()}";
+            if (TruongNhom.Length < 20 && HoTenGV.Length < 20)
+                xuat = xuat + $"\t{TruongNhom}\t{HoTenGV}";
+            else if (TruongNhom.Length > 20 && HoTenGV.Length > 20)
+                xuat = xuat + $"  {TruongNhom}  {HoTenGV}";
+            else 
+                xuat = xuat + $"  {TruongNhom}\t{HoTenGV}";
+            xuat = xuat + $"\t{NgayBatDau}\t{NgayKetThuc}\t{Is_thucTe}";
+            Console.WriteLine(xuat);
+            //Console.WriteLine($"   {MaDeTai}\t{TenDeTai}\t{KinhPhi}\t{TruongNhom}\t{HoTenGV}" +
+            //    $"\t {NgayBatDau}\t{NgayKetThuc}\t{TinhKinhPhi()}\t{Is_thucTe}");
         }
 
         #endregion method
