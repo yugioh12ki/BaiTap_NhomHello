@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Danhsachdetai>
+  <Detai>
+    <Madetai>20331</Madetai>
+    <Tendetai>Kinh te</Tendetai>
+    <Kinhphi>12000000</Kinhphi>
+    <Truongnhom>Nguyen Van B</Truongnhom>
+    <Thoigianbatdau>15/11/2024</Thoigianbatdau>
+    <Thoigianketthuc>1/12/2024</Thoigianketthuc>
+    <HotenGVHD>Duong Van Duong</HotenGVHD>
+    <SoCauHoi>120</SoCauHoi>
+  </Detai>
+</Danhsachdetai>

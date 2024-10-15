@@ -14,9 +14,13 @@ namespace DTO_BaiTapNhom
         public string MoiTruong 
         {
             get {  return moiTruong; }
-            set { if (moiTruong == "web" || moiTruong == "mobile" || moiTruong == "window") moiTruong = value;
-                else throw new ArgumentException("Môi Trường phải là web, mobile, window");            
-            } 
+            set
+            {
+                if (value == "web" || value == "mobile" || value == "window")
+                    moiTruong = value;
+                else throw new ArgumentException("Môi Trường phải là web, mobile, window");
+            }
+            
         }
         #endregion ThuocTinh
         #region method

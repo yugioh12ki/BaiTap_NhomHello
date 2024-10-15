@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Danhsachdetai>
+  <Detai>
+    <Madetai>20330</Madetai>
+    <Tendetai>Nghien cuu ly thuyet</Tendetai>
+    <Kinhphi>8000000</Kinhphi>
+    <Truongnhom>Nguyen Van A</Truongnhom>
+    <Thoigianbatdau>15/10/2024</Thoigianbatdau>
+    <Thoigianketthuc>30/10/2024</Thoigianketthuc>
+    <HotenGVHD>Tran Dac Tot</HotenGVHD>
+    <ThucTe>True</ThucTe>
+  </Detai>
+</Danhsachdetai>

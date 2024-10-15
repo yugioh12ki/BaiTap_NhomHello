@@ -15,7 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_BaiTapNhom", "BLL_BaiTa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileXml", "FileXml", "{96B40619-E9D0-402E-AD5B-F60422FF0D4E}"
 	ProjectSection(SolutionItems) = preProject
+		DSCongNghe.xml = DSCongNghe.xml
 		DSdetai.xml = DSdetai.xml
+		DSKinhTe.xml = DSKinhTe.xml
+		DSNCLT.xml = DSNCLT.xml
 	EndProjectSection
 EndProject
 Global

@@ -15,8 +15,9 @@ namespace DAL_BaiTapNhom
         DTO_lstCongNghe lstCongnghe = new DTO_lstCongNghe(); 
 
 
-        public void readFile(string filename)
+        public DTO_lstNCLT readFileNCLT(string filename)
         {
+            
             Console.InputEncoding = UnicodeEncoding.Unicode;
             try
             {
@@ -30,8 +31,7 @@ namespace DAL_BaiTapNhom
                      */
                     //DTO_cDeTai st = new DTO_cDetai();
                     XmlNode is_ThucTe = i["ThucTe"];
-                    XmlNode is_soCauHoi = i["soCauHoi"];
-                    XmlNode is_moiTruong = i["ThucTe"];
+                    
                     if(is_ThucTe != null)
                     {
                         DTO_NCLT st = new DTO_NCLT();
@@ -43,9 +43,38 @@ namespace DAL_BaiTapNhom
                         st.NgayKetThuc = i["Thoigianketthuc"].InnerText;
                         st.HoTenGV = i["HotenGVHD"].InnerText;
                         st.Is_thucTe = Boolean.Parse(i["ThucTe"].InnerText);
-                        lstNCLT.LstNCLT.AddRange(st);
+                        lstNCLT.LstNCLT.Add(st);
                     }  
-                    else if (is_soCauHoi != null)
+
+                }
+                
+            }
+            
+            catch (Exception e)
+            {
+                Console.WriteLine("Loi doc File: " + e.Message);
+            }
+            return lstNCLT;
+        }
+
+        public DTO_lstKinhTe readFileKinhTe(string filename)
+        {
+            Console.InputEncoding = UnicodeEncoding.Unicode;
+            try
+            {
+                XmlDocument read = new XmlDocument();
+                read.Load(filename);
+                XmlNodeList nodeList = read.SelectNodes("Danhsachdetai/Detai");
+                foreach (XmlNode i in nodeList)
+                {
+                    /* Tôi coi lại đề thì nếu ông làm giống trên PDF thì ông phải 3 file Xml với loại khác nhau
+                     * 
+                     */
+                    //DTO_cDeTai st = new DTO_cDetai();
+                    
+                    XmlNode is_soCauHoi = i["SoCauHoi"];
+                    
+                    if (is_soCauHoi != null)
                     {
                         DTO_KinhTe st = new DTO_KinhTe();
                         st.MaDeTai = i["Madetai"].InnerText;
@@ -58,7 +87,32 @@ namespace DAL_BaiTapNhom
                         st.SoCauHoi = Int32.Parse(i["SoCauHoi"].InnerText);
                         lstKinhTe.LstKinhTe.Add(st);
                     }
-                    else if (is_moiTruong != null)
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Loi doc File: " + e.Message);
+            }
+            return lstKinhTe;
+        }
+        public DTO_lstCongNghe readFileCongNghe(string filename)
+        {
+            Console.InputEncoding = UnicodeEncoding.Unicode;
+            try
+            {
+                XmlDocument read = new XmlDocument();
+                read.Load(filename);
+                XmlNodeList nodeList = read.SelectNodes("Danhsachdetai/Detai");
+                foreach (XmlNode i in nodeList)
+                {
+                    /* Tôi coi lại đề thì nếu ông làm giống trên PDF thì ông phải 3 file Xml với loại khác nhau
+                     * 
+                     */
+                    //DTO_cDeTai st = new DTO_cDetai();
+
+                    XmlNode is_MoiTruong = i["Moitruong"];
+
+                    if (is_MoiTruong != null)
                     {
                         DTO_CongNghe st = new DTO_CongNghe();
                         st.MaDeTai = i["Madetai"].InnerText;
@@ -68,16 +122,26 @@ namespace DAL_BaiTapNhom
                         st.NgayBatDau = i["Thoigianbatdau"].InnerText;
                         st.NgayKetThuc = i["Thoigianketthuc"].InnerText;
                         st.HoTenGV = i["HotenGVHD"].InnerText;
-                        st.MoiTruong = i["Moitruong"].InnerText;
+                        try
+                        {
+                            st.MoiTruong = is_MoiTruong.InnerText;
+                        }
+                        catch (ArgumentException ex) // Bắt lỗi nếu giá trị không hợp lệ
+                        {
+                            Console.WriteLine($"Lỗi khi gán môi trường cho đề tài {st.MaDeTai}: {ex.Message}");
+                            continue; // Bỏ qua đề tài này và tiếp tục với đề tài tiếp theo
+                        }
+                        
                         lstCongnghe.LstCongNghe.Add(st);
                     }
-                    
                 }
+                
             }
             catch (Exception e)
             {
                 Console.WriteLine("Loi doc File: " + e.Message);
             }
+            return lstCongnghe;
         }
     }
 }

@@ -12,18 +12,14 @@ namespace BaiTap_Nhom
     public class GUIBaiTapNhom
     {
         
-        private BLLBaiTapNhom _BLLBaiTapNhom;
+        BLLBaiTapNhom Bll = new BLLBaiTapNhom();
         DTO_lstNCLT lstNCLT = new DTO_lstNCLT();
         DTO_lstKinhTe lstKinhTe = new DTO_lstKinhTe();
         DTO_lstCongNghe lstCongNghe = new DTO_lstCongNghe();
         int soLuong = 0;
         int loai = 0;
-        
+        string path = "E:\\Học tập\\.NET\\LTHDT\\BaiTap_Nhom\\";
 
-        public GUIBaiTapNhom()
-        {
-            _BLLBaiTapNhom = new BLLBaiTapNhom();
-        }
 
         public void NhapThongTinDeTai(int loai)
         {
@@ -56,6 +52,37 @@ namespace BaiTap_Nhom
                     lstKinhTe.NhapDSKinhTe(soLuong);
                     break;
             }    
+        }
+
+        public void ShowDeTaiNCLT()
+        {
+            string filenameNCLT = path + "DSNCLT.xml";
+            DTO_lstNCLT lstNCLT = Bll.getNCLTFromFile(filenameNCLT);
+            lstNCLT.XuatDSNCLT();
+        }
+        public void ShowDeTaiKinhTe()
+        {
+            string filenameKinhTe = path + "DSKinhTe.xml";
+            DTO_lstKinhTe lstKinhTe = Bll.getKinhTeFromFile(filenameKinhTe);
+            lstKinhTe.XuatDSKinhTe();
+        }
+        public void ShowDeTaiCongNghe()
+        {
+            string filenameCongNghe = path + "DSCongNghe.xml";
+            DTO_lstCongNghe lstCongNghe = Bll.getCongNgheFromFile(filenameCongNghe);
+            lstCongNghe.XuatDSCongNghe();
+        }
+
+        public void XuatTatCaDeTaiTheoFile()
+        {
+            Console.WriteLine("======================= Danh Sách Các Đề Tài Theo Xml =============================");
+            Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
+            ShowDeTaiNCLT();
+            Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
+            ShowDeTaiKinhTe();
+            Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
+            ShowDeTaiCongNghe();
+            Console.WriteLine("==========================================================================");
         }
 
         public void XuatTatCaDeTai()
@@ -139,11 +166,11 @@ namespace BaiTap_Nhom
         {
             Console.WriteLine("=================== Danh Sách Các Đề Tài Thực Hiện Trên 4 Tháng ===================");
             Console.WriteLine("\n\t\t Đề Tài Nghiên Cứu Lý Thuyết ");
-            lstNCLT.XuatDSNCLT();
+            lstNCLT.XuatDSDeTaiTren4Thang();
             Console.WriteLine("\n\t\t Đề Tài Kinh Tế");
-            lstKinhTe.XuatDSKinhTe();
+            lstKinhTe.XuatDSDeTaiTren4Thang();
             Console.WriteLine("\n\t\t Đề Tài Công Nghệ");
-            lstCongNghe.XuatDSCongNghe();
+            lstCongNghe.XuatDSDeTaiTren4Thang();
             Console.WriteLine("==========================================================================");
         }
 
@@ -213,6 +240,7 @@ namespace BaiTap_Nhom
                     XuatDTaiKinhTe_LonHon100Cau();
                     break;
                 case 9:
+                    XuatDTaiThucHien4Thang();
                     break;
             }    
         }
@@ -231,7 +259,7 @@ namespace BaiTap_Nhom
                 
                 case 1:
                     //Nhập DS ở Phía Xml
-                    _BLLBaiTapNhom.docFileXml();
+                    XuatTatCaDeTaiTheoFile();
                   break;
                 case 2:
                     do

@@ -15,6 +15,7 @@ namespace BLL_BaiTapNhom
         //string link = "...";
 
         DALBaiTapNhom dALBaiTap = new DALBaiTapNhom();
+        
 
         #endregion Attributes
         #region Methods
@@ -22,22 +23,39 @@ namespace BLL_BaiTapNhom
         {
         }
 
-        //public List<DTO_NCLT> getlistDeTai()
-        //{
-        //    return dALBaiTap.readFile("");  
-        //}
-
-        public void docFileXml()
+        public DTO_lstNCLT getNCLTFromFile(string filename)
         {
-            dALBaiTap.readFile("../../../DSdetai.xml"); //Chỗ này đọc file
+            return dALBaiTap.readFileNCLT(filename);
         }
+
+        public DTO_lstKinhTe getKinhTeFromFile(string filename)
+        {
+            return dALBaiTap.readFileKinhTe(filename);
+        }
+
+        public DTO_lstCongNghe getCongNgheFromFile(string filename)
+        {
+            return dALBaiTap.readFileCongNghe(filename);
+        }
+
+        //public void docFileXml()
+        //{
+        //    dALBaiTap.readFileNCLT("../../../DSdetai.xml");
+        //    dALBaiTap.readFileKinhTe("../../../DSdetai.xml");
+        //    dALBaiTap.readFileCongNghe("../../../DSdetai.xml");//Chỗ này đọc file
+        //}
 
         public double TinhChiPhi(DTO_cDeTai Detai)
         {
             return Detai.TinhKinhPhi();
         }
 
-        
+        //public void XuatDSXml()
+        //{
+        //    dALBaiTap.XuatTrenDS();
+        //}
+
+
         #endregion Methods
         //4.2
         //public void ThemDeTaiMoi(List<DTO_cDeTai> dsDeTai)

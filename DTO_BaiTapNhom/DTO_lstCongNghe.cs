@@ -99,32 +99,77 @@ namespace DTO_BaiTapNhom
                 a.KinhPhi = a.KinhPhi + (a.KinhPhi * (10 / 100.0));
             }
         }
-       
-       
+
+
         //4.10 In ra danh sách có để tài nghiên cứu thời gian thực trên 4 tháng
+        //public void XuatDSDeTaiTren4Thang()
+        //{
+        //    bool check = false; // Biến kiểm tra xem có đề tài nào được tìm thấy không
+
+        //    try
+        //    {
+
+        //        foreach (DTO_CongNghe a in LstCongNghe)
+        //        {
+
+        //            DateTime ngayBatDau = DateTime.ParseExact(a.NgayBatDau, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+        //            DateTime ngayKetThuc = DateTime.ParseExact(a.NgayKetThuc, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+        //            TimeSpan thoiGianThucHien = ngayKetThuc - ngayBatDau;
+
+
+        //            if (thoiGianThucHien.TotalDays > 120) // 4 tháng = 120 ngày
+        //            {
+        //                a.Xuat();
+        //                check = true;
+        //            }
+        //        }
+        //        if (!check)
+        //        {
+
+        //            throw new Exception("Không có đề tài nào có thời gian thực hiện trên 4 tháng.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
         public void XuatDSDeTaiTren4Thang()
         {
-            bool check = false; // Biến kiểm tra xem có đề tài nào được tìm thấy không
+            bool check = false;
 
             try
             {
 
-                foreach (DTO_CongNghe a in LstCongNghe)
+                foreach (DTO_CongNghe a in lstCongNghe)
                 {
 
-                    DateTime ngayBatDau = DateTime.ParseExact(a.NgayBatDau, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    DateTime ngayKetThuc = DateTime.ParseExact(a.NgayKetThuc, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
-
-                    TimeSpan thoiGianThucHien = ngayKetThuc - ngayBatDau;
-
-
-                    if (thoiGianThucHien.TotalDays > 120) // 4 tháng = 120 ngày
+                    string[] formats = { "dd/MM/yyyy", "d/MM/yyyy", "dd/M/yyyy", "d/M/yyyy" };
+                    if (DateTime.TryParseExact(a.NgayBatDau, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime ngayBatDau) &&
+                    DateTime.TryParseExact(a.NgayKetThuc, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime ngayKetThuc))
                     {
-                        a.Xuat();
-                        check = true;
+                        // Tính số tháng giữa ngày bắt đầu và kết thúc
+                        int Month = ((ngayKetThuc.Year - ngayBatDau.Year) * 12) + ngayKetThuc.Month - ngayBatDau.Month;
+
+                        if (ngayKetThuc.Day < ngayBatDau.Day)
+                        {
+                            Month--;
+                        }
+
+                        // Kiểm tra nếu thời gian thực hiện >= 4 tháng
+                        if (Month >= 4)
+                        {
+                            a.Xuat();
+                            check = true;
+                        }
                     }
-                }
+                    else
+                    {
+                        Console.WriteLine($"Đề tài có mã {a.MaDeTai} có định dạng ngày không hợp lệ.");
+                    }
+                }   
                 if (!check)
                 {
 
@@ -136,7 +181,6 @@ namespace DTO_BaiTapNhom
                 Console.WriteLine(ex.Message);
             }
         }
-
 
 
 
